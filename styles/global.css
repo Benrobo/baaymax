@@ -1,0 +1,14 @@
+
+
+
+:root{
+    --mian: red;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    left: 0px;
+    overflow-x: hidden;
+}

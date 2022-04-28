@@ -1,0 +1,11 @@
+# node modules
+
+/node_modules
+
+# dotenv variables
+
+.env
+
+# next js
+
+.next
