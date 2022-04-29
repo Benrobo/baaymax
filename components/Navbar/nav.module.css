@@ -109,3 +109,99 @@
     border-radius: 50%;
     opacity: .7;
 }
+
+/* Responsive Navbar */
+.mobileNav{
+    width: 100%;
+    height: auto;
+    padding:0px;
+    margin: 0px auto;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+}
+
+
+.mobileNav .main{
+    width: 100vmin;
+    max-height: 70px;
+    background: var(--bg3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px auto;
+    padding: 0px;
+    box-shadow: 0px 0px 4px #000;
+}
+
+.mobileNav .main .li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition:all .2s ease;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+.mobileNav .main li .icon{
+    font-size: 20px;
+    padding: 10px;
+    transition:all .2s ease;
+}
+
+.mobileNav .main .li label{
+    font-size: 12px;
+    font-weight: 300;
+    transition:all .3s ease;
+    transform: translateY(100px);
+}
+
+
+.mobileNav .main .li:hover > label{
+    display: flex;
+    transition:all .3s ease;
+    transform: translateY(-2px);
+    color: var(--gr2);
+}
+
+.mobileNav .main .li:hover > .icon{
+    /* font-size: 19px; */
+    background: var(--bg1);
+    border-radius: 50%;
+    color: var(--gr2);
+    transition:all .2s ease;
+}
+
+/* when nav is active */
+
+.mobileNav .main .active{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition:all .2s ease;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.mobileNav .main .active > label{
+    font-size: 12px;
+    font-weight: 300;
+    transition:all .3s ease;
+    transform: translateY(-2px);
+    color: var(--gr2);
+}
+
+.mobileNav .main .active > .icon{
+    padding: 7px;
+    background: var(--bg1);
+    border-radius: 50%;
+    color: var(--gr2);
+    transition:all .2s ease;
+}

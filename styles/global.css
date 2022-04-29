@@ -18,7 +18,7 @@
 
 
 :root{
-    --bg1: #28292d;
+    --bg1: #202022;
     --bg2: #2d2e32;
     --bg3: #25262a;
     --gr1: #64f4ac;
@@ -52,6 +52,10 @@ ul{
     align-items: center;
     justify-content: center;
     list-style: none;
+}
+
+li{
+    list-style-type: none;
 }
 
 
