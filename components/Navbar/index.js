@@ -1,5 +1,5 @@
 
-import { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import Link from "next/link"
 import { FaGithub, FaMailBulk, FaMailchimp, FaTwitter } from "react-icons/fa"
@@ -10,59 +10,61 @@ import styles from "./nav.module.css"
 
 
 function NavBar() {
+
+
     return (
-        <div className={styles.navbar}>
-            <div className={styles.left}>
-                <p className={styles.brand}>Benrobo</p>
+        <React.Fragment>
+            <div className={styles.navbar}>
+                <div className={styles.left}>
+                    <p className={styles.brand}>Benrobo</p>
 
-                <ul className={styles.ul}>
-                    <li className={styles.li, styles.active}>Home</li>
-                    <li className={styles.li}>Services</li>
-                    <li className={styles.li}>Projects</li>
-                    <li className={styles.li}>About</li>
-                    <li className={styles.li}>Contacts</li>
-                </ul>
+                    <ul className={styles.ul}>
+                        <li className={styles.li, styles.active}>Home</li>
+                        <li className={styles.li}>Services</li>
+                        <li className={styles.li}>Projects</li>
+                        <li className={styles.li}>About</li>
+                        <li className={styles.li}>Contacts</li>
+                    </ul>
+                </div>
+                <div className={styles.right}>
+                    <ul className={styles.ul}>
+                        <a href="" className={styles.a}>
+                            <FaTwitter className={styles.icon} />
+                            <small>Twitter</small>
+                        </a>
+                        <a href="" className={styles.a}>
+                            <FaGithub className={styles.icon} />
+                            <small>Github</small>
+                        </a>
+                        <a href="" className={styles.a}>
+                            <FiMail className={styles.icon, styles.mail} />
+                            <small>Email</small>
+                        </a>
+                    </ul>
+                </div>
             </div>
-            <div className={styles.right}>
-                <ul className={styles.ul}>
-                    <a href="" className={styles.a}>
-                        <FaTwitter className={styles.icon} />
-                        <small>Twitter</small>
-                    </a>
-                    <a href="" className={styles.a}>
-                        <FaGithub className={styles.icon} />
-                        <small>Github</small>
-                    </a>
-                    <a href="" className={styles.a}>
-                        <FiMail className={styles.icon, styles.mail} />
-                        <small>Email</small>
-                    </a>
-                </ul>
-            </div>
-
-            <ResponsiveNavbar />
-        </div>
+        </React.Fragment>
     )
 }
 
 export default NavBar
 
-function ResponsiveNavbar(){
+export function ResponsiveNavbar() {
 
     const [active, setActive] = useState("home")
 
-    function handleActive(e){
+    function handleActive(e) {
         let tgt = e.target.dataset;
         let parent = e.target.parentElement.dataset;
 
         if (Object.entries(tgt).length === 0) {
             if (Object.entries(parent).length > 0) {
-                let {name} = parent
+                let { name } = parent
                 setActive(name)
             }
             return
         }
-        let {name} = tgt;
+        let { name } = tgt;
         setActive(name)
     }
 

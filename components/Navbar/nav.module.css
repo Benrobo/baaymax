@@ -16,6 +16,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  padding-left: 10px;
 }
 
 .navbar .left .brand {
@@ -67,7 +68,7 @@
 
 
 .navbar .right{
-    width: auto;
+    width: 50vmin;
     position: relative;   
 }
 
@@ -119,19 +120,20 @@
     position: fixed;
     left: 0px;
     bottom: 0px;
+    background: var(--bg3);
+    box-shadow: 0px 0px 4px #000;
 }
 
 
 .mobileNav .main{
     width: 100vmin;
     max-height: 70px;
-    background: var(--bg3);
+    
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 0px auto;
     padding: 0px;
-    box-shadow: 0px 0px 4px #000;
 }
 
 .mobileNav .main .li{
@@ -143,7 +145,7 @@
     transition:all .2s ease;
     padding: 10px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 
@@ -169,7 +171,6 @@
 }
 
 .mobileNav .main .li:hover > .icon{
-    /* font-size: 19px; */
     background: var(--bg1);
     border-radius: 50%;
     color: var(--gr2);
@@ -187,7 +188,7 @@
     transition:all .2s ease;
     padding: 10px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .mobileNav .main .active > label{
@@ -204,4 +205,11 @@
     border-radius: 50%;
     color: var(--gr2);
     transition:all .2s ease;
+}
+
+
+@media(max-width:700px){
+    .navbar .left{
+        display: none;
+    }
 }
