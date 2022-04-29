@@ -18,9 +18,10 @@
 
 
 :root{
+    --dark1:#0c0c0c8c;
     --bg1: #202022;
     --bg2: #2d2e32;
-    --bg3: #28292d;
+    --bg3: #25262a;
     --gr1: #64f4ac;
     --gr2: #64f4acea;
     --gr3: rgb(100, 244, 172, .7);
@@ -29,7 +30,7 @@
     --grnbg3:rgb(3, 252, 128, .4);
     --white1:#fff;
     --white2:#ccc;
-    --white3:#777;
+    --white3:rgb(129, 129, 129);
     --red1:#ff0000;
     --red2:rgb(255, 0, 0, .4);
 
@@ -69,6 +70,6 @@ body{
     left: 0px;
     overflow-x: hidden;
     font-family: var(--poppin);
-    background: var(--bg1);
+    background: var(--bg3);
     color: var(--white1);
 }
