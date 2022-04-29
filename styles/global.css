@@ -20,10 +20,13 @@
 :root{
     --bg1: #202022;
     --bg2: #2d2e32;
-    --bg3: #25262a;
+    --bg3: #28292d;
     --gr1: #64f4ac;
     --gr2: #64f4acea;
     --gr3: rgb(100, 244, 172, .7);
+    --grnbg1:#05ff82;
+    --grnbg2:#15eb80;
+    --grnbg3:rgb(3, 252, 128, .4);
     --white1:#fff;
     --white2:#ccc;
     --white3:#777;
