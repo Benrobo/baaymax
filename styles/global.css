@@ -1,9 +1,59 @@
+@import url("./bootstrap.module.css");
+
+@font-face {
+    font-family: Poppin;
+    src: url("../public/fonts/Poppins.ttf");
+}
+
+@font-face {
+    font-family: FiraCode;
+    src: url("../public/fonts/FiraCode.ttf");
+}
+
+@font-face {
+    font-family: Cario;
+    src: url("../public/fonts/Cairo-Light.ttf");
+}
 
 
 
 :root{
-    --mian: red;
+    --bg1: #28292d;
+    --bg2: #2d2e32;
+    --bg3: #25262a;
+    --gr1: #64f4ac;
+    --gr2: #64f4acea;
+    --gr3: rgb(100, 244, 172, .7);
+    --white1:#fff;
+    --white2:#ccc;
+    --white3:#777;
+    --red1:#ff0000;
+    --red2:rgb(255, 0, 0, .4);
+
+    /* fonts name */
+    --poppin: Poppin;
+    --firacode: Firacode;
+    --cario: Cario;
 }
+
+html{
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
+
+ul{
+    width: auto;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
 
 body{
     width: 100%;
@@ -11,4 +61,7 @@ body{
     position: relative;
     left: 0px;
     overflow-x: hidden;
+    font-family: var(--poppin);
+    background: var(--bg1);
+    color: var(--white1);
 }

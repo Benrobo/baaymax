@@ -1,0 +1,18 @@
+.container{
+    width: 80%;
+    height: auto;
+    margin: 0px auto;
+}
+
+
+/* media queries */
+
+@media(max-width: 600px){
+    .container{
+        width: 100%;
+    }
+}
+
+
+
+
