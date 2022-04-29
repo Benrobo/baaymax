@@ -11,6 +11,12 @@ export default function Header({ children }) {
             <Container>
                 {children}
 
+                {/* only show when on mobile */}
+                <div className={styles.profilePic}>
+                    <img src={avatar.src} className={styles.avatar} />
+                </div>
+
+                {/* shows on desktop */}
                 <div className={styles.main}>
 
                     <div className={styles.left}>
