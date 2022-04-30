@@ -113,6 +113,12 @@
 }
 
 
+.intro .right .main .link{
+    font-size: 14px;
+    color: var(--gr2);
+    text-decoration: underline;
+}
+
 /* Companies user worked for */
 
 .intro .companies{

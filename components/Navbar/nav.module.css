@@ -119,10 +119,11 @@
     margin: 0px auto;
     position: fixed;
     left: 0px;
-    bottom: 0px;
+    bottom: -5px;
     background: var(--bg3);
     box-shadow: 0px 0px 4px #000;
     z-index: 1000;
+    overflow: hidden;
 }
 
 

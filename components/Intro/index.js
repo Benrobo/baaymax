@@ -1,5 +1,6 @@
 
 
+import Link from "next/link"
 import styles from "./intro.module.css"
 
 
@@ -73,6 +74,10 @@ export default function Intro() {
                         <p className={styles.briefIntro}>
                             As a software developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally change the world. That's why I’m excited to make a big impact at  a high growth company.
                         </p>
+
+                        <Link href="">
+                            <a className={styles.link}>Read More</a>
+                        </Link>
                     </div>
                 </div>
             </div>

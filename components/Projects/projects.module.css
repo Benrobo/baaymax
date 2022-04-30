@@ -5,6 +5,20 @@
     position: relative;
     top: 50px;
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.projectsCont .projLink{
+    text-align: center;
+    color: var(--grnbg1);
+    text-decoration: underline;
+    position: absolute;
+    top: 50px;
+    font-size: 14px;
 }
 
 .projectsCont .top{
@@ -88,7 +102,10 @@
 }
 
 .projectsCont .projects .box .body{
+    width: 100%;
     padding: 10px;
+    bottom: 5px;
+    position: absolute;
 }
 
 .projectsCont .projects .box .body .title{
@@ -146,10 +163,14 @@
         width: 60px;
     }
     .projectsCont .projects .box{
-        width: 70vmin;
+        width: 100vmin;
         margin: 12px auto;
     }
     .projectsCont .projects .box::before{
         width: 75%;
+    }
+
+    .projectsCont .projLink{
+        display: none;
     }
 }

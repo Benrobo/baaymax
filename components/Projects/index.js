@@ -1,5 +1,6 @@
 
 
+import Link from "next/link"
 import styles from "./projects.module.css"
 
 function Projects() {
@@ -9,6 +10,11 @@ function Projects() {
             <span className={styles.line}></span>
             <p className={styles.title}>Latest Works</p>
             <span className={styles.line}></span>
+
+            
+            <Link href="/">
+                <a className={styles.projLink}>All Projects</a>
+            </Link>
         </div>
 
         <div className={styles.projects}>
@@ -20,7 +26,7 @@ function Projects() {
                             <style jsx>{`
                                 .imgCont{
                                     width: 100%;
-                                    height: 150px;
+                                    height: 190px;
                                     background-image: url("https://www.wallpapertip.com/wmimgs/136-1369543_laptop-coding.jpg");
                                     background-size: cover;
                                     background-repeat: no-repeat;
