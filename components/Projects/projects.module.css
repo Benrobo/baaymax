@@ -18,11 +18,11 @@
 
 .projectsCont .top .title{
     color: var(--white2);
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .projectsCont .top .line{
-    width: 150px;
+    width: 120px;
     height: 2px;
     border-radius: 30px;
     background: var(--gr3);
@@ -38,6 +38,7 @@
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-bottom: 50px;
 }
 
 .projectsCont .projects .box{
@@ -52,6 +53,7 @@
     top: 50px;
     margin-bottom: 100px;
     margin-right: 5px;
+    margin: 5px auto;
 }
 
 .projectsCont .projects .box::before{
@@ -134,3 +136,20 @@
 }
 
 
+
+@media(max-width: 600px) {
+    .projectsCont .projects{
+        padding: 12px;
+        margin-bottom: 100px;
+    }
+    .projectsCont  .top .line{
+        width: 60px;
+    }
+    .projectsCont .projects .box{
+        width: 70vmin;
+        margin: 12px auto;
+    }
+    .projectsCont .projects .box::before{
+        width: 75%;
+    }
+}
