@@ -11,9 +11,10 @@ import styles from "./layout.module.css"
 
 function Layout({ children }) {
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const [windowWidth, setWindowWidth] = useState(0)
 
   useEffect(() => {
+    setWindowWidth(window.innerWidth)
     window.addEventListener("resize", () => {
       setWindowWidth(window.innerWidth)
     })
