@@ -5,9 +5,6 @@ import React, { useEffect, useState } from "react"
 import { NavBar, Footer, Header, DomHead } from ".."
 import { ResponsiveNavbar } from "../Navbar"
 
-import styles from "./layout.module.css"
-
-
 
 function Layout({ children }) {
 
@@ -21,7 +18,7 @@ function Layout({ children }) {
   }, [windowWidth])
 
   return (
-    <div className={styles.layout}>
+    <div className={`w-screen h-screen`}>
       <DomHead />
       <Header>
         <NavBar />

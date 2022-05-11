@@ -1,5 +1,6 @@
 import { Layout, Intro, Container, Projects } from "../components";
 
+
 export default function HomePage() {
 
     return (

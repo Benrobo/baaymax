@@ -7,59 +7,60 @@ import styles from "./intro.module.css"
 export default function Intro() {
 
     return (
-        <div className={styles.intro}>
-            <div className={styles.introCont}>
-                <div className={styles.left}>
-                    <div className={styles.box}>
-                        <div className={styles.top}>
-                            <p className={styles.title}>
+        <div className={`w-full h-auto p-0 relative top-[50px] mb-[50px]`}>
+            <div className={`w-full flex items-start justify-between flex-row flex-wrap`}>
+                <div className={`w-full h-auto p-[10px] relative container md:w-[50%]`}>
+                    {/* boxes */}
+                    <div className={`w-full h-[120px] p-[20px] rounded-[5px] bg-dark-200 m-[0px] relative transition-all hover:shadow-2xl `}>
+                        <div className={`flex flex-col items-start justify-start`}>
+                            <p className={`m-0 font-extrabold text-green-100 `}>
                                 Design
                             </p>
-                            <span className={styles.info}>
+                            <span className={`text-[10px] text-white-300 pt-[10px]  `}>
                                 Create digital products with unique ideas
                             </span>
                         </div>
-                        <div className={styles.bottom}>
-                            <a href="" className={styles.link}>
+                        <div className={`absolute bottom-[10px]`}>
+                            <a href="" className={` text-[14px] text-white-200 font-bold underline `}>
                                 20 Projects
                             </a>
                         </div>
-                        <ion-icon name="color-wand" class={styles.icon}></ion-icon>
+                        <ion-icon name="color-wand" class={`absolute top-[10px] right-[10px] text-green-400 p-[5px] `}></ion-icon>
                     </div>
-                    <div className={styles.box}>
-                        <div className={styles.top}>
-                            <p className={styles.title}>
+                    <div className={`w-full h-[120px] p-[20px] rounded-[5px] bg-dark-200 m-[0px] relative transition-all mt-4 hover:shadow-2xl `}>
+                        <div className={`flex flex-col items-start justify-start`}>
+                            <p className={`m-0 font-extrabold text-green-100 `}>
                                 Frontend Development
                             </p>
-                            <span className={styles.info}>
+                            <span className={`text-[10px] text-white-300 pt-[10px]  `}>
                                 Development of beautiful and unique user interfaces.
                             </span>
                         </div>
-                        <div className={styles.bottom}>
-                            <a href="" className={styles.link}>
-                                120 Projects
+                        <div className={`absolute bottom-[10px]`}>
+                            <a href="" className={` text-[14px] text-white-200 font-bold underline `}>
+                                60 Projects
                             </a>
                         </div>
-                        <ion-icon name="code-slash" class={styles.icon}></ion-icon>
+                        <ion-icon name="color-wand" class={`absolute top-[10px] right-[10px] text-green-400 p-[5px] `}></ion-icon>
                     </div>
-                    <div className={styles.box}>
-                        <div className={styles.top}>
-                            <p className={styles.title}>
+                    <div className={`w-full h-[120px] p-[20px] rounded-[5px] bg-dark-200 m-[0px] relative transition-all mt-4 hover:shadow-2xl `}>
+                        <div className={`flex flex-col items-start justify-start`}>
+                            <p className={`m-0 font-extrabold text-green-100 `}>
                                 Backend Development
                             </p>
-                            <span className={styles.info}>
+                            <span className={`text-[10px] text-white-300 pt-[10px]  `}>
                                 Development of complex and scalable backend architecture.
                             </span>
                         </div>
-                        <div className={styles.bottom}>
-                            <a href="" className={styles.link}>
-                                100 Projects
+                        <div className={`absolute bottom-[10px]`}>
+                            <a href="" className={` text-[14px] text-white-200 font-bold underline `}>
+                                60 Projects
                             </a>
                         </div>
-                        <ion-icon name="server" class={styles.icon}></ion-icon>
+                        <ion-icon name="color-wand" class={`absolute top-[10px] right-[10px] text-green-400 p-[5px] `}></ion-icon>
                     </div>
                 </div>
-                <div className={styles.right}>
+                <div className={`w-full h-auto relative top-[20px] p-[10px] md:w-[45%]`}>
                     <p className={styles.title}>Introduce</p>
                     <div className={styles.main}>
                         <h1 className={styles.intro}>

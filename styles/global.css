@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 @import url("./bootstrap.module.css");
 
 @font-face {
@@ -34,7 +39,6 @@
     --red1:#ff0000;
     --red2:rgb(255, 0, 0, .4);
 
-    /* fonts name */
     --poppin: Poppin;
     --firacode: Firacode;
     --cario: Cario;
@@ -62,7 +66,6 @@ li{
     list-style-type: none;
 }
 
-
 body{
     width: 100%;
     height: 100vh;
@@ -70,6 +73,252 @@ body{
     left: 0px;
     overflow-x: hidden;
     font-family: var(--poppin);
-    background: var(--bg3);
     color: var(--white1);
+    background: var(--bg1);
+}
+
+
+.navbar .right ul a:hover > .mail{
+    opacity: 1;
+}
+
+.navbar .right ul a .mail{
+    padding: 8px;
+    font-size: 30px;
+    background: var(--bg1);
+    color: var(--gr1);
+    border-radius: 50%;
+    opacity: .7;
+}
+
+.mobileNav{
+    width: 100%;
+    height: auto;
+    padding:0px;
+    margin: 0px auto;
+    position: fixed;
+    left: 0px;
+    bottom: -5px;
+    background: var(--bg3);
+    box-shadow: 0px 0px 4px #000;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+
+.mobileNav .main{
+    width: 100vmin;
+    max-height: 70px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.mobileNav .main .li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition:all .2s ease;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+
+.mobileNav .main li .icon{
+    font-size: 20px;
+    padding: 10px;
+    transition:all .2s ease;
+}
+
+.mobileNav .main .li label{
+    font-size: 12px;
+    font-weight: 300;
+    transition:all .3s ease;
+    transform: translateY(100px);
+}
+
+
+.mobileNav .main .li:hover > label{
+    display: flex;
+    transition:all .3s ease;
+    transform: translateY(-2px);
+    color: var(--gr2);
+}
+
+.mobileNav .main .li:hover > .icon{
+    background: var(--bg1);
+    border-radius: 50%;
+    color: var(--gr2);
+    transition:all .2s ease;
+}
+
+/* when nav is active */
+
+.mobileNav .main .active{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition:all .2s ease;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.mobileNav .main .active > label{
+    font-size: 12px;
+    font-weight: 300;
+    transition:all .3s ease;
+    transform: translateY(-2px);
+    color: var(--gr2);
+}
+
+.mobileNav .main .active > .icon{
+    padding: 7px;
+    background: var(--bg1);
+    border-radius: 50%;
+    color: var(--gr2);
+    transition:all .2s ease;
+}
+
+
+@media(max-width:700px){
+    .navbar .left{
+        /* display: none; */
+    }
+}
+
+
+.header .main{
+    width: 50%;
+    height: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header .mainArea{
+    width: 300px;
+    height: 300px;
+    background: var(--bg3);
+    border-radius: 50%;
+    padding: 15vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.header .mainArea .avatar{
+    width: 45vmax;
+}
+
+.header .main .circleA{
+    width: 250px;
+    height:250px;
+    /* border: 2px solid var(--grnbg2); */
+    padding: 20px;
+    position: absolute;
+    top: 10px;
+    border-radius: 50%;
+}
+
+.header .circleA .langImgA{
+    width: 10vmin;
+    padding: 12px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--bg2);
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px var(--bg1);
+    z-index: 100;
+    animation: cylceA 10s linear infinite;
+    transition: all .2s ease;
+}
+
+
+.header .circleB{
+    width: 250px;
+    height:250px;
+    /* border: 2px solid green; */
+    padding: 20px;
+    position: absolute;
+    /* top: 10px;
+    right: 0px; */
+    margin:0px auto;
+    border-radius: 50%;
+}   
+
+
+.header .circleB .langImgB{
+    width: 20vmin;
+    padding: 15px;
+    position: absolute;
+    right: 20px;
+    bottom: -50px;
+    background: var(--bg2);
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px var(--bg1);
+    z-index: 100;
+    animation: cylceB 10s linear infinite;
+    transition: all .2s ease;
+}
+
+
+
+.header .circleC{
+    width: 250px;
+    height:250px;
+    /* border: 2px solid var(--red1); */
+    padding: 20px;
+    position: absolute;
+    /* top: -20px;
+    left: 0px; */
+    margin: 0px auto;
+    border-radius: 50%;
+}
+
+.header .circleC .langImgC{
+    width: 15vmin;
+    padding: 15px;
+    position: absolute;
+    left: -50px;
+    top: 100px;
+    background: var(--bg2);
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px var(--bg1);
+    z-index: 100;
+    animation: cylceC 10s linear infinite;
+    transition: all .2s ease;
+}
+
+.header .langImgA:hover{
+    filter: grayscale(0%);
+}
+
+.header .langImgB:hover{
+    filter: grayscale(0%);
+}
+
+.header .langImgC:hover{ 
+    filter: grayscale(0%);
+} 
+
+
+@media(max-width: 700px) {
+    .header .main{
+        display: none;
+    }
 }
