@@ -1,14 +1,13 @@
 
 
 import Link from "next/link"
-import styles from "./intro.module.css"
 
 
 export default function Intro() {
 
     return (
         <div className={`w-full h-auto p-0 relative top-[50px] mb-[50px]`}>
-            <div className={`w-full flex items-start justify-between flex-row flex-wrap`}>
+            <div className={`w-full flex items-start justify-between flex-row flex-wrap-reverse`}>
                 <div className={`w-full h-auto p-[10px] relative container md:w-[50%]`}>
                     {/* boxes */}
                     <div className={`w-full h-[120px] p-[20px] rounded-[5px] bg-dark-200 m-[0px] relative transition-all hover:shadow-2xl `}>
@@ -60,24 +59,24 @@ export default function Intro() {
                         <ion-icon name="color-wand" class={`absolute top-[10px] right-[10px] text-green-400 p-[5px] `}></ion-icon>
                     </div>
                 </div>
-                <div className={`w-full h-auto relative top-[20px] p-[10px] md:w-[45%]`}>
-                    <p className={styles.title}>Introduce</p>
-                    <div className={styles.main}>
-                        <h1 className={styles.intro}>
+                <div className={`w-full h-auto relative top-[20px] p-[10px] mb-5 md:mb-0 md:w-[45%]`}>
+                    <p className={`text-[12px] text-white-200 `}>Introduce</p>
+                    <div className={`relative top-[20px]`}>
+                        <h1 className={`text-[25px] mb-[20px]`}>
                             Hello! I'm Benaiah Alumona.
                         </h1>
                         <br />
                         <br />
-                        <p className={styles.subtitle}>
+                        <p className={`text-[15px] text-white-100`}>
                             Mission driven software engineer, with a passion for thoughtful UI design, collaboration, and teaching.
                         </p>
                         <br />
-                        <p className={styles.briefIntro}>
+                        <p className={`text-[14px] mb-5 text-white-200`}>
                             As a software developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally change the world. That's why I’m excited to make a big impact at  a high growth company.
                         </p>
 
                         <Link href="">
-                            <a className={styles.link}>Read More</a>
+                            <a className={`text-[14px] font-bold text-green-200 underline`}>Read More</a>
                         </Link>
                     </div>
                 </div>
