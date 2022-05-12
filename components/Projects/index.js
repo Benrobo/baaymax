@@ -20,7 +20,7 @@ function Projects() {
                 {
                     [2, 3, 4, 45].slice(0, 3).map((list) => {
                         return (
-                            <div className={`box w-full h-[300px] bg-dark-200 rounded-[5px] relative top-[50px] transition-all mb-[50px] mr-[5px] md:w-[250px]`} key={list}>
+                            <div className={`box w-full h-[300px] bg-dark-200 rounded-[5px] relative top-[50px] transition-all mb-[50px] mr-[5px] opacity-[.7] md:w-[250px] hover:opacity-[1]`} key={list}>
                                 <div className="imgCont"></div>
                                 <style jsx>{`
                                 .imgCont{

@@ -1,4 +1,4 @@
-import { Layout, Intro, Container, Projects } from "../components";
+import { Layout, Intro, Container, Projects, Testimonials } from "../components";
 
 
 export default function HomePage() {
@@ -10,6 +10,7 @@ export default function HomePage() {
                     <Intro />
                     <Projects />
                 </Container>
+                <Testimonials />
             </Layout>
         </div>
     )
