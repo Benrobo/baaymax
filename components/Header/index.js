@@ -2,6 +2,7 @@
 import { Container } from ".."
 import avatar from "../../public/images/avatar/avatar.png"
 
+
 export default function Header({ children }) {
 
     return (
@@ -19,7 +20,7 @@ export default function Header({ children }) {
 
                     <div className={`w-full h-full mb-[50px] relative md:w-[50%]`}>
                         <div className={``}>
-                            <span className={`py-[2px] px-[8px] bg-green-600 text-green-100 rounded-[3px] text-[12px] `}>
+                            <span data-aos="fade-left" className={`py-[2px] px-[8px] bg-green-600 text-green-100 rounded-[3px] text-[12px] `}>
                                 Software Engineer
                             </span>
                             <br />

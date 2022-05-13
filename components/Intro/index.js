@@ -6,7 +6,7 @@ import Link from "next/link"
 export default function Intro() {
 
     return (
-        <div className={`w-full h-auto p-0 relative top-[50px] mb-[50px]`}>
+        <div className={`w-full h-auto p-0 relative top-[50px] mb-[100px]`}>
             <div className={`w-full flex items-start justify-between flex-row flex-wrap-reverse`}>
                 <div className={`w-full h-auto p-[10px] relative container md:w-[50%]`}>
                     {/* boxes */}
@@ -59,7 +59,7 @@ export default function Intro() {
                         <ion-icon name="color-wand" class={`absolute top-[10px] right-[10px] text-green-400 p-[5px] `}></ion-icon>
                     </div>
                 </div>
-                <div className={`w-full h-auto relative top-[20px] p-[10px] mb-10 md:mb-0 md:w-[45%]`}>
+                <div className={`w-full h-auto relative top-[20px] p-[10px] mb-[30px] md:mb-0 md:w-[45%]`}>
                     <p className={`text-[12px] text-white-200 `}>Introduce</p>
                     <div className={`relative top-[20px]`}>
                         <h1 className={`text-[35px] font-bold mb-[20px]`}>

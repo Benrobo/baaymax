@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "dotenv": "^16.0.0",
     "next": "12.1.5",
     "notyf": "^3.10.0",
