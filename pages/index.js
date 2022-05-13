@@ -1,15 +1,17 @@
-import { Layout, Intro, Container, Projects, Contact, Footer, Quote } from "../components";
+import { Layout, Intro, Container, Projects, Contact, Footer, Quote, DomHead } from "../components";
 import { useEffect } from "react";
 import Aos from "aos"
+import { DataContextProvider } from "../context/DataContext";
 
 export default function HomePage() {
 
     useEffect(() => {
-        Aos.init({ duration: "1500" })
+        Aos.init({ duration: "1000" })
     }, [])
 
     return (
-        <div>
+        <DataContextProvider>
+            <DomHead />
             <Layout>
                 <Container>
                     <Intro />
@@ -19,7 +21,7 @@ export default function HomePage() {
                 <Contact />
                 <Footer />
             </Layout>
-        </div>
+        </DataContextProvider>
     )
 }
 

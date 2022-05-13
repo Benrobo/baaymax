@@ -1,31 +1,25 @@
 
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Container } from '..'
 import { FaPhone, FaFacebookMessenger } from 'react-icons/fa'
 import { AiFillMessage, AiOutlineClose } from 'react-icons/ai'
+import DataContext from '../../context/DataContext'
 
 function Contact() {
 
-    const [contactActive, setContactActive] = useState(false)
-
-    function openContactForm() {
-        setContactActive(true)
-    }
-
-    function closeContactForm() {
-        setContactActive(false)
-    }
+    const { contactActive, closeContactForm, openContactForm } = useContext(DataContext)
 
     return (
         <div className="w-screen bg-dark-300 h-auto p-2 md:p-5 ">
             <Container>
                 <div className="w-full h-auto flex flex-col items-start justify-start py-[50px] mb-[20px] md:py-5 ">
-                    <h1 className="text-[30px] font-thin ">
+                    <h1 data-aos="fade-right" className="text-[30px] font-thin ">
                         Let Make The Impossible <span className="text-green-200 font-extrabold">Possible.</span>
                     </h1>
                     <br />
-                    <p className=" text-[20px] ">
-                        Start by <span className=" text-green-200 underline cursor-pointer ">saying hi</span>
+                    <a id='contact'></a>
+                    <p data-aos="fade-right" className=" text-[20px] ">
+                        Start by <span className=" text-green-200 underline cursor-pointer " onClick={openContactForm}>saying hi</span>
                     </p>
                 </div>
             </Container>

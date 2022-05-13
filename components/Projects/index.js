@@ -6,13 +6,13 @@ function Projects() {
     return (
         <div className={`projectCont w-full h-auto relative top-[50px] p-10px flex flex-col items-center justify-center mb-[50px]`}>
             <div className={`w-full flex flex-row items-center justify-center`}>
-                <span className={`w-[100px] h-[2px] rounded-[30px] m-[20px] bg-green-200 md:w-[120px]`}></span>
-                <p className={`text-white-200 text-[15px]`}>Latest Works</p>
-                <span className={`w-[100px] h-[2px] rounded-[30px] m-[20px] bg-green-200 md:w-[120px]`}></span>
+                <span data-aos="zoom-in" className={`w-[100px] h-[2px] rounded-[30px] m-[20px] bg-green-200 md:w-[120px]`}></span>
+                <p data-aos="fade-up" className={`text-white-200 text-[15px]`}>Latest Works</p>
+                <span data-aos="zoom-in" className={`w-[100px] h-[2px] rounded-[30px] m-[20px] bg-green-200 md:w-[120px]`}></span>
 
 
-                <Link href="/">
-                    <a className={`text-center text-green-200 underline absolute top-[50px] text-[14px]`}>All Projects</a>
+                <Link href="/projects">
+                    <a data-aos="zoom-in-up" className={`text-center text-green-200 underline absolute top-[50px] text-[14px]`}>All Projects</a>
                 </Link>
             </div>
 
@@ -20,7 +20,7 @@ function Projects() {
                 {
                     [2, 3, 4, 45].slice(0, 3).map((list) => {
                         return (
-                            <div className={`box w-full h-[300px] bg-dark-200 rounded-[5px] relative top-[50px] transition-all mb-[50px] mr-[5px] opacity-[.7] md:w-[250px] hover:opacity-[1]`} key={list}>
+                            <div data-aos="zoom-in" className={`box w-full h-[300px] bg-dark-200 rounded-[5px] relative top-[50px] transition-all mb-[50px] mr-[5px] opacity-[.7] md:w-[250px] hover:opacity-[1]`} key={list}>
                                 <div className="imgCont"></div>
                                 <style jsx>{`
                                 .imgCont{

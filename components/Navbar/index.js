@@ -4,6 +4,7 @@ import Link from "next/link"
 import { FaGithub, FaMailBulk, FaMailchimp, FaTwitter } from "react-icons/fa"
 import { FiMail } from "react-icons/fi"
 
+import avatar from "../../public/images/avatar/avatar.png"
 
 function NavBar() {
 
@@ -15,10 +16,18 @@ function NavBar() {
                     <p className={`font-extrabold mr-[20px]`}>Benrobo</p>
 
                     <ul className={`relative ml-[10px] hidden md:flex`}>
-                        <li className={`mt-[5px] mr-[10px] mb-[0px] ml-[10px] transition-all hover:text-green-100 hover:font-extrabold cursor-pointer text-[12px]`}>Home</li>
-                        <li className={`mt-[5px] mr-[10px] mb-[0px] ml-[10px] transition-all hover:text-green-100 hover:font-extrabold cursor-pointer text-[12px]`}>About</li>
-                        <li className={`mt-[5px] mr-[10px] mb-[0px] ml-[10px] transition-all hover:text-green-100 hover:font-extrabold cursor-pointer text-[12px]`}>Portfolio</li>
-                        <li className={`mt-[5px] mr-[10px] mb-[0px] ml-[10px] transition-all hover:text-green-100 hover:font-extrabold cursor-pointer text-[12px]`}>Contact</li>
+                        <li className={`mt-[5px] mr-[10px] mb-[0px] ml-[10px] transition-all hover:text-green-100 hover:font-extrabold cursor-pointer text-[12px]`}>
+                            <Link href="/">Home</Link>
+                        </li>
+                        <li className={`mt-[5px] mr-[10px] mb-[0px] ml-[10px] transition-all hover:text-green-100 hover:font-extrabold cursor-pointer text-[12px]`}>
+                            <Link href="/about">About</Link>
+                        </li>
+                        <li className={`mt-[5px] mr-[10px] mb-[0px] ml-[10px] transition-all hover:text-green-100 hover:font-extrabold cursor-pointer text-[12px]`}>
+                            <Link href="/projects">Projects</Link>
+                        </li>
+                        <li className={`mt-[5px] mr-[10px] mb-[0px] ml-[10px] transition-all hover:text-green-100 hover:font-extrabold cursor-pointer text-[12px]`}>
+                            <Link href="#contact">Contact</Link>
+                        </li>
                     </ul>
                 </div>
                 <div className={`relative right w-[50vmin] hidden md:flex `}>
@@ -37,6 +46,9 @@ function NavBar() {
                         </a>
                     </ul>
                 </div>
+                <div className={`absolute top-[15px] right-[25px] md:hidden `}>
+                    <img src={avatar.src} className={` w-[40px] rounded-[50%] border-[2px] border-solid border-green-100 bg-dark-100 `} />
+                </div>
             </div>
         </React.Fragment>
     )
@@ -44,9 +56,9 @@ function NavBar() {
 
 export default NavBar
 
-export function ResponsiveNavbar() {
+export function ResponsiveNavbar({ activePage }) {
 
-    const [active, setActive] = useState("home")
+    const [active, setActive] = useState(activePage || "home")
 
     function handleActive(e) {
         let tgt = e.target.dataset;
@@ -67,23 +79,29 @@ export function ResponsiveNavbar() {
         <div className={`mobileNav`}>
             <div className={`main`}>
                 <li className={active === "home" ? `active` : `li`} data-name="home" onClick={handleActive}>
-                    <ion-icon name="home-outline" class={`icon`}></ion-icon>
+                    <Link href="/">
+                        <ion-icon name="home-outline" class={`icon`}></ion-icon>
+                    </Link>
                     <label className={`label`}>Home</label>
                 </li>
-                <li className={active === "services" ? `active` : `li`} data-name="services" onClick={handleActive}>
-                    <ion-icon name="briefcase-outline" class={`icon`}></ion-icon>
-                    <label className={`label`}>Services</label>
-                </li>
                 <li className={active === "projects" ? `active` : `li`} data-name="projects" onClick={handleActive}>
-                    <ion-icon name="cube-outline" class={`icon`}></ion-icon>
-                    <label className={`label`}>Projects</label>
+                    <Link href="/projects">
+                        <ion-icon name="cube-outline" class={`icon`}></ion-icon>
+                    </Link>
+                    <label className={`label`}>
+                        Projects
+                    </label>
                 </li>
                 <li className={active === "about" ? `active` : `li`} data-name="about" onClick={handleActive}>
-                    <ion-icon name="person-outline" class={`icon`}></ion-icon>
+                    <Link href="/about">
+                        <ion-icon name="person-outline" class={`icon`}></ion-icon>
+                    </Link>
                     <label className={`label`}>About</label>
                 </li>
                 <li className={active === "contact" ? `active mr-5` : `li mr-5`} data-name="contact" onClick={handleActive}>
-                    <ion-icon name="mail-outline" class={`icon`}></ion-icon>
+                    <Link href="#contact">
+                        <ion-icon name="mail-outline" class={`icon`}></ion-icon>
+                    </Link>
                     <label className={`label`}>Contact</label>
                 </li>
             </div>
