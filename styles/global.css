@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 
-@import url("./bootstrap.module.css");
-
 @font-face {
     font-family: Poppin;
     src: url("../public/fonts/Poppins.ttf");

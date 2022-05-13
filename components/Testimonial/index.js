@@ -28,12 +28,13 @@ function TestimonialCard() {
         <>
             {Array(5).fill(1).slice(0, 3).map((data) => {
                 return (
-                    <div key={data} id="t-box" className='relative w-[350px] h-auto mt-2 ml-2 bg-dark-400 p-4 rounded-lg overflow-hidden max-h-[300px]'>
-                        <FaQuoteRight className='absolute top-[20px] right-[25px] text-[35px] text-white-300' />
+                    <div key={data} id="t-box" className='relative w-[350px] h-auto mt-2 mb-2 mr-2 bg-dark-400 p-4 rounded-lg overflow-hidden max-h-[300px]'>
+                        <FaQuoteRight className='absolute top-[20px] right-[25px] text-[35px] text-white-300 opacity-[.3]' />
                         <div id="ratings" className="w-full flex flex-row items-center justify-start">
                             <StarRatings count={10} size={10} />
-                            <small className='ml-2 text-white-300 font-bold'>Rating</small>
+                            <small className='ml-2 text-white-300 font-bold'>Brian Brad</small>
                         </div>
+                        <br />
                         <div id="body" className="w-full flex flex-row items-start justify-start mt-4">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, eligendi natus quibusdam ut laudantium ipsam? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, ratione quis illum consequatur dolorem ducimus? </p>
                         </div>

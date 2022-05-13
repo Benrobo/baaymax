@@ -5,7 +5,7 @@ import avatar from "../../public/images/avatar/avatar.png"
 export default function Header({ children }) {
 
     return (
-        <header className={`header w-full h-screen relative bg-dark-200`}>
+        <header className={`header w-full h-[100vh] relative bg-dark-200 md:h-auto`}>
             <Container>
                 {children}
 
@@ -24,7 +24,7 @@ export default function Header({ children }) {
                             </span>
                             <br />
                             <br />
-                            <h1 className={` text-[7vmin] md:text-[5vmin] `}>
+                            <h1 className={` text-[9vmin] md:text-[5vmin] `}>
                                 Making The Impossible Possible. Using 1's and 0's.
                             </h1>
                             <br />

@@ -15,12 +15,12 @@ export default function Intro() {
                             <p className={`m-0 font-extrabold text-green-100 `}>
                                 Design
                             </p>
-                            <span className={`text-[10px] text-white-300 pt-[10px]  `}>
+                            <span className={`text-[12px] text-white-300 pt-[10px]  `}>
                                 Create digital products with unique ideas
                             </span>
                         </div>
                         <div className={`absolute bottom-[10px]`}>
-                            <a href="" className={` text-[14px] text-white-200 font-bold underline `}>
+                            <a className={` text-[14px] text-white-200 font-bold underline `}>
                                 20 Projects
                             </a>
                         </div>
@@ -31,12 +31,12 @@ export default function Intro() {
                             <p className={`m-0 font-extrabold text-green-100 `}>
                                 Frontend Development
                             </p>
-                            <span className={`text-[10px] text-white-300 pt-[10px]  `}>
+                            <span className={`text-[12px] text-white-300 pt-[10px]  `}>
                                 Development of beautiful and unique user interfaces.
                             </span>
                         </div>
                         <div className={`absolute bottom-[10px]`}>
-                            <a href="" className={` text-[14px] text-white-200 font-bold underline `}>
+                            <a className={` text-[14px] text-white-200 font-bold underline `}>
                                 60 Projects
                             </a>
                         </div>
@@ -47,23 +47,23 @@ export default function Intro() {
                             <p className={`m-0 font-extrabold text-green-100 `}>
                                 Backend Development
                             </p>
-                            <span className={`text-[10px] text-white-300 pt-[10px]  `}>
+                            <span className={`text-[12px] text-white-300 pt-[10px]  `}>
                                 Development of complex and scalable backend architecture.
                             </span>
                         </div>
                         <div className={`absolute bottom-[10px]`}>
-                            <a href="" className={` text-[14px] text-white-200 font-bold underline `}>
+                            <a className={` text-[14px] text-white-200 font-bold underline `}>
                                 60 Projects
                             </a>
                         </div>
                         <ion-icon name="color-wand" class={`absolute top-[10px] right-[10px] text-green-400 p-[5px] `}></ion-icon>
                     </div>
                 </div>
-                <div className={`w-full h-auto relative top-[20px] p-[10px] mb-5 md:mb-0 md:w-[45%]`}>
+                <div className={`w-full h-auto relative top-[20px] p-[10px] mb-10 md:mb-0 md:w-[45%]`}>
                     <p className={`text-[12px] text-white-200 `}>Introduce</p>
                     <div className={`relative top-[20px]`}>
-                        <h1 className={`text-[25px] mb-[20px]`}>
-                            Hello! I'm Benaiah Alumona.
+                        <h1 className={`text-[35px] font-bold mb-[20px]`}>
+                            Hello! 🖐  I'm Benaiah Alumona.
                         </h1>
                         <br />
                         <br />
