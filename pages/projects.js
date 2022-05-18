@@ -3,6 +3,10 @@ import Link from 'next/link'
 import { Container, DomHead, Footer, NavBar } from "../components"
 import { FaArrowLeft } from 'react-icons/fa'
 import { ResponsiveNavbar } from '../components/Navbar'
+import { FaStar, FaArrowRight, FaQuoteRight } from "react-icons/fa"
+import { AiFillGithub } from "react-icons/ai"
+
+
 
 function Projects() {
 
@@ -40,6 +44,7 @@ function Projects() {
                 <div className="w-full px-4 mt-5 mx-auto h-auto  flex flex-col items-center justify-around flex-wrap mb-5 md:w-[90%] md:flex-row">
                     <Categories />
                     <ProjectsCard />
+                    <GithubRepo />
                 </div>
             </div>
             <Footer />
@@ -106,6 +111,58 @@ function ProjectsCard() {
                     )
                 })
             }
+        </>
+    )
+}
+
+
+function GithubRepo() {
+
+    return (
+        <div className="relative mt-5 mr-5 w-full h-auto bg-dark-200 flex flex-col items-start justify-start px-4 py-3 rounded-md md:w-[300px] md:mr-2">
+            <h2 className="w-full text-[20px] ">Github Workflow</h2>
+            <p className=" w-full text-[15px] text-white-300 ">Project description. Lorem ipsum dolor sit amet consectetur.</p>
+            <br />
+            <div className="ratings w-full flex flex-row items-start justify-start">
+                <span className="mr-2 flex flex-row items-start justify-start">
+                    <StarRatings title="star" />
+                </span>
+                <span className="mr-2 flex flex-row items-start justify-start">
+                    <StarRatings title="fork" />
+                </span>
+            </div>
+
+            <a href="#" target={"_blank"} className="absolute right-3 top-2 flex flex-row items-center">
+                <small className="underline">View</small>
+                <FaArrowRight className="ml-2 text-[12px] " />
+            </a>
+        </div>
+    )
+}
+
+function StarRatings({ count = 1, size = 3, title = "star" }) {
+
+    return (
+        <>
+            {
+                Array(count).fill(count).map((i) => {
+                    return (
+                        <>
+                            {title === "star" ?
+                                <FaStar key={i} className={`text-green-200 text-[${size}px] `} key={i} />
+                                :
+                                title === "fork" ?
+                                    <AiFillGithub key={i} className={`text-green-200 text-[${size}px] `} key={i} />
+                                    :
+                                    ""
+                            }
+                        </>
+                    )
+                })
+
+            }
+            <small className="ml-2 text-white-200 font-extrabold">{count}</small>
+            <small className="ml-2 text-white-200">{title}</small>
         </>
     )
 }

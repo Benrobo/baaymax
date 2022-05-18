@@ -1,0 +1,16 @@
+{
+    "projects":[
+        {
+            "title": "Some dummy title",
+            "imageUrl": "",
+            "description": "",
+            "tags": [ "react", "postgresql", "nodejs" ]
+        },
+        {
+            "title": "Some dummy title",
+            "imageUrl": "",
+            "description": "",
+            "tags": [ "react", "postgresql", "nodejs" ]
+        }
+    ]
+}

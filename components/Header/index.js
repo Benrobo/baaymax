@@ -1,9 +1,18 @@
-
+import { useState, useEffect } from "react"
 import { Container } from ".."
 import avatar from "../../public/images/avatar/avatar.png"
 
-
 export default function Header({ children }) {
+
+    const [resumeActive, setResumeActive] = useState(false)
+
+    function openResume() {
+
+        setResumeActive(!resumeActive)
+    }
+
+
+
 
     return (
         <header className={`header w-full h-[100vh] relative bg-dark-200 md:h-auto`}>
@@ -47,6 +56,12 @@ export default function Header({ children }) {
                                 </span>
                             </div>
                         </div>
+                        <div className="w-full h-auto mt-[60px]">
+                            <br />
+                            <button className="w-[150px] border-[2px] border-solid border-green-200 px-5 py-3 bg-dark-100 rounded-[30px] scale-[.90] hover:scale-[.95] transition-all  " onClick={openResume}>View CV</button>
+                        </div>
+
+                        {resumeActive && <ResumeViewer openResume={openResume} />}
                     </div>
                     <div data-aos="fade-left" className={`main w-full h-auto hidden md:block md:w-[50%] relative `}>
                         <div className={`mainArea`}>
@@ -65,6 +80,45 @@ export default function Header({ children }) {
                 </div>
             </Container>
         </header>
+    )
+}
+
+function ResumeViewer({ openResume }) {
+
+    const [resume, setResume] = useState("https://")
+
+    useEffect(() => {
+        (async () => {
+            let res = await fetch("./CV/resume.pdf")
+            let data = res.url
+
+            console.log(res);
+
+            setResume(data)
+        })()
+    }, [])
+
+    function dowloadCv() {
+        let link = document.createElement("a")
+        link.href = resume;
+        link.download = "resume.pdf"
+        link.click()
+    }
+
+    return (
+        <div className="fixed top-0 left-0 w-screen h-screen bg-dark-400 z-[1500] flex flex-row items-center justify-center">
+            <div id="box" className="w-[100%] h-[99%] mx-auto bg-dark-100 overflow-hidden rounded-md md:w-[70%]">
+                <div id="head" className="w-full h-auto p-3 bg-dark-200 flex items-start justify-start">
+                    <h2>My Resume / CV</h2>
+                    <button className="px-3 py-1 flex flex-row items-center justify-center bg-green-300 ml-4 text-[12px] text-dark-300 font-bold rounded-[5px] scale-[.90] transition-all hover:scale-[.95]  " onClick={dowloadCv}>Download</button>
+                    <button className="px-3 py-1 flex flex-row items-center justify-center bg-red-500 ml-4 text-[12px] text-dark-300 font-bold rounded-[5px] scale-[.90] transition-all hover:scale-[.95] " onClick={openResume}>Close</button>
+                </div>
+                <iframe src={"/CV/resume.pdf"} frameborder="0" className="w-full h-full overflow-scroll bg-white-200 mt-0"></iframe>
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
     )
 }
 
