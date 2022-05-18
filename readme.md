@@ -1,4 +1,4 @@
-# BayMax
+# BaayMax
 ### Easily generate unique portfolio site using yout `github username`
 
 
