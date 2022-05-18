@@ -1,9 +1,8 @@
+
 {
-    "html": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html/html-original.svg",
-    "css": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css/css-original.svg",
-    "javascript": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-    "nodejs": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-    "expressjs": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/expressjs/expressjs-original.svg",
-    "reactjs": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/reactjs/reactjs-original.svg",
-    "bootstrap": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+    "languages": [
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+    ]
 }

@@ -1,0 +1,19 @@
+{
+    "skill": [
+        {
+            "name": "Design",
+            "description": "Create digital products with unique ideas",
+            "projects_completed": 20
+        },
+        {
+            "name": "Frontend Development",
+            "description": "Development of beautiful and unique user interfaces.",
+            "projects_completed": 50
+        },
+        {
+            "name": "Backend Development",
+            "description": "Development of complex and scalable backend architecture.",
+            "projects_completed": 100
+        }   
+    ]
+}

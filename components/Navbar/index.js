@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react"
 
 import Link from "next/link"
-import { FaGithub, FaMailBulk, FaMailchimp, FaTwitter } from "react-icons/fa"
+import { FaGithub, FaTwitter } from "react-icons/fa"
 import { FiMail } from "react-icons/fi"
-
+import usersInfo from "../../data/usersInfo.json"
 import avatar from "../../public/images/avatar/avatar.png"
 
 function NavBar() {
@@ -13,7 +13,7 @@ function NavBar() {
         <React.Fragment>
             <div className={`navbar relative h-auto w-full flex align-center justify-between py-[20px]`}>
                 <div className={`left w-auto flex align-start items-start justify-start px-[10px] `}>
-                    <p className={`font-extrabold mr-[20px]`}>Benrobo</p>
+                    <p className={`font-extrabold mr-[20px]`}>{usersInfo.github_username.charAt(0).toUpperCase() + usersInfo.github_username.slice(1)}</p>
 
                     <ul className={`relative ml-[10px] hidden md:flex`}>
                         <li className={`mt-[5px] mr-[10px] mb-[0px] ml-[10px] transition-all hover:text-green-100 hover:font-extrabold cursor-pointer text-[12px]`}>
