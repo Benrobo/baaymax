@@ -4,6 +4,7 @@ import Link from "next/link"
 import { FaGithub, FaTwitter } from "react-icons/fa"
 import { FiMail } from "react-icons/fi"
 import usersInfo from "../../data/usersInfo.json"
+import { socials } from "../../data/socials.json"
 import avatar from "../../public/images/avatar/avatar.png"
 
 function NavBar() {
@@ -32,18 +33,24 @@ function NavBar() {
                 </div>
                 <div className={`relative right w-[50vmin] hidden md:flex `}>
                     <ul className={`flex flex-row align-center justify-between items-center`}>
-                        <a href="" className={`w-[100px] text-[17px] flex flex-row align-center justify-center items-center decoration-none  hover:text-white `}>
-                            <FaTwitter className={`mr-[10px] `} />
-                            <small>Twitter</small>
-                        </a>
-                        <a href="" className={`w-[100px] text-[17px] flex flex-row align-center justify-center items-center decoration-none  hover:text-white `}>
-                            <FaGithub className={`mr-[10px] `} />
-                            <small>Github</small>
-                        </a>
-                        <a href="" className={`w-[100px] text-[17px] flex flex-row align-center justify-center items-center decoration-none  hover:text-white `}>
-                            <FiMail className={`mr-[10px] icon mail`} />
-                            <small>Email</small>
-                        </a>
+                        {socials["twitter"] !== "" &&
+                            <a href={socials["twitter"]} target="_blank" className={`w-[100px] text-[17px] flex flex-row align-center justify-center items-center decoration-none  hover:text-white `}>
+                                <FaTwitter className={`mr-[10px] `} />
+                                <small>Twitter</small>
+                            </a>}
+
+                        {socials["github"] !== "" &&
+                            <a href={socials["github"]} target="_blank" className={`w-[100px] text-[17px] flex flex-row align-center justify-center items-center decoration-none  hover:text-white `}>
+                                <FaGithub className={`mr-[10px] `} />
+                                <small>Github</small>
+                            </a>}
+
+                        {socials["email"] !== "" &&
+                            <a href={`mailto:${socials["email"]}`} className={`w-[100px] text-[17px] flex flex-row align-center justify-center items-center decoration-none  hover:text-white `}>
+                                <FiMail className={`mr-[10px] icon mail`} />
+                                <small>Email</small>
+                            </a>}
+
                     </ul>
                 </div>
                 <div className={`absolute top-[15px] right-[25px] md:hidden `}>

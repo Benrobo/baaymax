@@ -1,5 +1,8 @@
 import { Container } from ".."
-import { FaTwitter, FaGithub, FaFacebook } from 'react-icons/fa'
+import { FaTwitter, FaGithub, FaFacebook, FaVoicemail } from 'react-icons/fa'
+import { AiFillMail } from "react-icons/ai"
+
+import socials from "../../data/socials.json"
 
 function Footer() {
   return (
@@ -17,9 +20,13 @@ function Footer() {
           </div>
           <div className="right">
             <div className="socials flex flex-row items-center justify-center">
-              <SocialLink url="https://twitter.com/benaiah_al" children={<FaTwitter />} />
-              <SocialLink url="https://github.com/benrobo" children={<FaGithub />} />
-              <SocialLink url="https://facebook.com/benaiah.alumona" children={<FaFacebook />} />
+              {socials["twitter"] !== "" && <SocialLink url={socials["twitter"]} children={<FaTwitter />} />}
+
+              {socials["github"] !== "" && <SocialLink url={socials["github"]} children={<FaGithub />} />}
+
+              {socials["email"] !== "" && <SocialLink url={socials["email"]} children={<AiFillMail />} />}
+
+              {socials["facebook"] !== "" && <SocialLink url={socials["facebook"]} children={<FaFacebook />} />}
             </div>
           </div>
 
