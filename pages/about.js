@@ -4,8 +4,11 @@ import { Container, DomHead, Footer, NavBar } from "../components"
 import { FaArrowLeft } from 'react-icons/fa'
 import { ResponsiveNavbar } from '../components/Navbar'
 
+import userInfo from "../data/usersInfo.json"
+
 function About() {
     const [windowWidth, setWindowWidth] = useState(0)
+    const [avatar, setAvatar] = useState("")
 
     useEffect(() => {
         setWindowWidth(window.innerWidth)
@@ -13,6 +16,11 @@ function About() {
             setWindowWidth(window.innerWidth)
         })
     }, [windowWidth])
+
+    useEffect(() => {
+        let useravatar = JSON.parse(localStorage.getItem("github_avatar"))
+        setAvatar(useravatar)
+    }, [])
 
     return (
         <div>
@@ -40,7 +48,7 @@ function About() {
                     <div className="w-full  h-auto flex flex-col items-center justify-between p-5 md:flex-row">
                         <div className="w-full md:w-[50%] ">
                             <div className="w-full h-[450px] bg-cover bg-center bg-no-repeat md:w-[350px] rounded-md" style={{
-                                backgroundImage: `url(${"https://avatars.githubusercontent.com/u/65370456?v=4"})`
+                                backgroundImage: `url(${avatar})`
                             }}></div>
                         </div>
                         <div className="w-full md:w-[50%] ">
@@ -48,17 +56,24 @@ function About() {
                                 <p className={`text-[12px] text-white-200 `}>Introduce</p>
                                 <div className={`relative top-[20px]`}>
                                     <h1 className={`text-[35px] font-bold mb-[20px]`}>
-                                        Hello! 🖐  I'm Benaiah Alumona.
+                                        {userInfo.greeting_type}  I'm {userInfo.full_name}
                                     </h1>
                                     <br />
                                     <br />
-                                    <p className={`text-[15px] text-white-100`}>
-                                        Mission driven software engineer, with a passion for thoughtful UI design, collaboration, and teaching.
+                                    <p className={`text-[15px] text-white-200 p-2 px-5 bg-dark-400 border-l-[5px] border-solid border-l-green-200 italic`}>
+                                        {userInfo.intro_tagline}
                                     </p>
                                     <br />
-                                    <p className={`text-[14px] mb-5 text-white-200`}>
-                                        As a software developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally change the world. That's why I’m excited to make a big impact at  a high growth company.
-                                    </p>
+                                    {
+                                        userInfo.bio_desc.length > 0 ?
+                                            userInfo.bio_desc.map((bio, i) => {
+                                                return (
+                                                    <p className={`text-[14px] mb-5 text-white-200`}>{bio}</p>
+                                                )
+                                            })
+                                            :
+                                            "Opps, 😬 looks like I dont have a bio."
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -67,7 +82,7 @@ function About() {
             </div>
             <br />
             <Footer />
-            {windowWidth <= 700 && <ResponsiveNavbar />}
+            {windowWidth <= 700 && <ResponsiveNavbar pageName={"projects"} />}
         </div>
     )
 }

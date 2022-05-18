@@ -6,11 +6,11 @@ import { ResponsiveNavbar } from '../components/Navbar'
 import { FaStar, FaArrowRight, FaQuoteRight } from "react-icons/fa"
 import { AiFillGithub } from "react-icons/ai"
 
+import { projects } from "../data/projects.json"
+import userInfo from "../data/usersInfo.json"
 
 
 function Projects() {
-
-
     const [windowWidth, setWindowWidth] = useState(0)
 
     useEffect(() => {
@@ -19,6 +19,7 @@ function Projects() {
             setWindowWidth(window.innerWidth)
         })
     }, [windowWidth])
+
 
     return (
         <div>
@@ -41,14 +42,25 @@ function Projects() {
                 </Container>
             </div>
             <div className="w-screen h-auto ">
-                <div className="w-full px-4 mt-5 mx-auto h-auto  flex flex-col items-center justify-around flex-wrap mb-5 md:w-[90%] md:flex-row">
-                    <Categories />
-                    <ProjectsCard />
-                    <GithubRepo />
-                </div>
+                <br />
+                <Container>
+                    <div id="head" className="w-full py-2 mx-auto flex flex-row justify-start items-start ">
+                        <h2 className="text-[20px] text-white-200 ">Personal Projects</h2>
+                    </div>
+                    <div className="w-full mt-2 mx-auto h-auto  flex flex-col items-start justify-start flex-wrap mb-5 space-x-0 md:space-x-5 md:w-[100%] md:flex-row">
+                        {/* <Categories /> */}
+                        <ProjectsCard />
+                    </div>
+                    <div id="head" className="w-full py-5 mx-auto flex flex-row justify-start items-start ">
+                        <h2 className=" text-[20px] text-white-200 ">Github Repos</h2>
+                    </div>
+                    <div id="head" className="w-full space-x-0 py-4 mx-auto flex flex-row justify-start items-start flex-wrap mb-[50px] md:flex-row md:space-x-3 ">
+                        <GithubRepo />
+                    </div>
+                </Container>
             </div>
             <Footer />
-            {windowWidth <= 700 && <ResponsiveNavbar />}
+            {windowWidth <= 700 && <ResponsiveNavbar pageName={"projects"} />}
         </div>
     )
 }
@@ -77,39 +89,62 @@ function ProjectsCard() {
     return (
         <>
             {
-                [2, 3, 4, 45].slice(0, 3).map((list) => {
-                    return (
-                        <div className={`box w-full h-[300px] bg-dark-200 rounded-[5px] relative top-[50px] transition-all mb-[50px] mr-[20px] opacity-[.7] md:w-[250px] hover:opacity-[1]`} key={list}>
-                            <div className="imgCont"></div>
-                            <style jsx>{`
-                                .imgCont{
-                                    width: 100%;
-                                    height: 190px;
-                                    background-image: url("https://www.wallpapertip.com/wmimgs/136-1369543_laptop-coding.jpg");
-                                    background-size: cover;
-                                    background-repeat: no-repeat;
-                                    background-position: center;
-                                    // box-shadow: 0px 0px 3px #000;
-                                    border-radius: 5px;
-                                }
-                            `}</style>
-                            <div className={`w-full p-[10px] absolute bottom-[5px]`}>
-                                <p className={`text-[15px] text-white-200`}>E-Workflow System</p>
-                                <br />
-                                <div className={`absolute bottom-[5px] left-[5px] p-0 flex items-start justify-start`}>
-                                    <span className={`text-[10px] py-[3px] px-[9px] bg-dark-100 mr-[2px] rounded-[2px] text-white-100`}>Html</span>
-                                </div>
-                                <span className={`absolute  my-[-20px] right-[10px] text-[12px] flex items-center justify-start`}>
-                                    <a href="" className={`text-white-200 mr-[10px] hover:underline hover:text-white-100`}>
-                                        View
-                                    </a>
-                                    <ion-icon name="arrow-forward-outline" className={`ml-[10px] p-[10px]`}></ion-icon>
-                                </span>
+                projects.length > 0 ?
+                    projects.slice(0, 3).map((list, i) => {
+                        return (
+                            <div data-aos="zoom-in" key={i} className={`box w-full h-auto bg-dark-200 rounded-[5px] relative top-[50px] transition-all mb-[50px] mr-[5px] opacity-[.7] md:w-[250px] hover:opacity-[1]`} key={list}>
+                                <div className="imgCont"></div>
+                                <style jsx>{`
+                        .imgCont{
+                            width: 100%;
+                            height: 190px;
+                            background-image: url(${list.imageUrl === "" || list.imageUrl === null ? "https://www.wallpapertip.com/wmimgs/136-1369543_laptop-coding.jpg" : list.imageUrl});
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            // box-shadow: 0px 0px 3px #000;
+                            border-radius: 5px;
+                        }
+                    `}</style>
+                                <div className={`w-full p-[10px] bottom-[5px]`}>
+                                    <div className="w-full h-auto">
+                                        <p className={`text-[15px] text-white-200`}>{list.title === "" ? "Project Title" : list.title}</p>
+                                        <br />
+                                        <small>{list.description === "" ? "some dummy description" : list.description}</small>
+                                    </div>
+                                    <br />
+                                    <div className={` bottom-[5px] left-[5px] p-0 flex items-start justify-start`}>
+                                        {
+                                            list.tags.length > 0 ?
+                                                list.tags.slice(0, 3).map((tag, i) => {
+                                                    return (
+                                                        <span key={i} className={`text-[10px] py-[3px] px-[9px] bg-dark-100 mr-[2px] rounded-[2px] text-white-100`}>{tag}</span>
+                                                    )
+                                                })
+                                                :
+                                                ""
+                                        }
+                                    </div>
+                                    <span className={`absolute  my-[-20px] right-[10px] text-[12px] flex items-center justify-start`}>
+                                        {
+                                            list.project_url !== "" ?
+                                                <>
+                                                    <a href={list.project_url} className={`text-white-200 mr-[10px] hover:underline hover:text-white-100`}>
+                                                        View
+                                                    </a>
+                                                    <ion-icon name="arrow-forward-outline" className={`ml-[10px] p-[10px]`}></ion-icon>
+                                                </>
+                                                :
+                                                ""
+                                        }
+                                    </span>
 
+                                </div>
                             </div>
-                        </div>
-                    )
-                })
+                        )
+                    })
+                    :
+                    ""
             }
         </>
     )
@@ -117,26 +152,65 @@ function ProjectsCard() {
 
 
 function GithubRepo() {
+    const [repos, setRepo] = useState([])
+
+    async function fetchRepos() {
+        let res;
+        let url = `https://api.github.com/users/${userInfo.github_username}/repos`
+        if (localStorage.getItem("user_repos") === null) {
+            res = await fetch(url)
+            let data = await res.json()
+
+            if (data && data.length > 0) {
+                localStorage.setItem("user_repo", JSON.stringify(data))
+                setRepo(data)
+                return
+            }
+        }
+
+        let userReopos = JSON.parse(localStorage.getItem("user_repos"))
+
+        setRepo(userReopos)
+    }
+
+    useEffect(() => {
+
+        (async () => {
+            await fetchRepos()
+        })()
+
+    }, [])
 
     return (
-        <div className="relative mt-5 mr-5 w-full h-auto bg-dark-200 flex flex-col items-start justify-start px-4 py-3 rounded-md md:w-[300px] md:mr-2">
-            <h2 className="w-full text-[20px] ">Github Workflow</h2>
-            <p className=" w-full text-[15px] text-white-300 ">Project description. Lorem ipsum dolor sit amet consectetur.</p>
-            <br />
-            <div className="ratings w-full flex flex-row items-start justify-start">
-                <span className="mr-2 flex flex-row items-start justify-start">
-                    <StarRatings title="star" />
-                </span>
-                <span className="mr-2 flex flex-row items-start justify-start">
-                    <StarRatings title="fork" />
-                </span>
-            </div>
+        <>
+            {
+                repos.length > 0 ?
+                    repos.map((rep, i) => {
+                        return (
+                            <div data-aos="zoom-in" className="relative w-full h-[180px] bg-dark-200 flex flex-col items-start justify-start px-4 py-3 mt-2 rounded-md md:w-[300px]">
+                                <h2 className="w-full text-[20px] ">{rep.name}</h2>
+                                <p className=" w-full text-[15px] text-white-300 ">{rep.description}</p>
+                                <br />
+                                <div className="ratings absolute bottom-4 w-full flex flex-row items-start justify-start">
+                                    <span className="mr-2 flex flex-row items-start justify-start">
+                                        <StarRatings title="star" count={rep.stargazers_count} />
+                                    </span>
+                                    <span className="mr-2 flex flex-row items-start justify-start">
+                                        <StarRatings title="fork" count={rep.forks} />
+                                    </span>
+                                </div>
 
-            <a href="#" target={"_blank"} className="absolute right-3 top-2 flex flex-row items-center">
-                <small className="underline">View</small>
-                <FaArrowRight className="ml-2 text-[12px] " />
-            </a>
-        </div>
+                                <a href={rep.html_url} target={"_blank"} className="absolute right-3 top-2 flex flex-row items-center">
+                                    <small className="underline">View</small>
+                                    <FaArrowRight className="ml-2 text-[12px] " />
+                                </a>
+                            </div>
+                        )
+                    })
+                    :
+                    "Opps, No Github Repo was found."
+            }
+        </>
     )
 }
 

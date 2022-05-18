@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Container } from ".."
-import avatar from "../../public/images/avatar/avatar.png"
+import userAvatar from "../../public/images/avatar/avatar.png"
 
 import usersInfo from "../../data/usersInfo.json"
 import languages from "../../data/languages.json"
@@ -9,6 +9,7 @@ export default function Header({ children }) {
 
     const [resumeActive, setResumeActive] = useState(false)
     const [reposcount, setReposCount] = useState(0)
+    const [avatar, setAvatar] = useState("")
 
     const userName = usersInfo.github_username;
 
@@ -26,16 +27,20 @@ export default function Header({ children }) {
             let data = await res.json()
 
             if (data && data.public_repos !== undefined) {
-                const { public_repos } = data;
+                const { public_repos, avatar_url } = data;
                 localStorage.setItem("repo_counts", JSON.stringify(public_repos))
+                // store github user avatar
+                localStorage.setItem("github_avatar", JSON.stringify(avatar_url))
                 setReposCount(public_repos)
             }
         }
 
         // get data from cahched localstorage
         let data = JSON.parse(localStorage.getItem("repo_counts"))
+        let useravatar = JSON.parse(localStorage.getItem("github_avatar"))
 
         setReposCount(data)
+        setAvatar(useravatar)
 
         return data
     }
@@ -102,8 +107,13 @@ export default function Header({ children }) {
                         {resumeActive && <ResumeViewer openResume={openResume} />}
                     </div>
                     <div data-aos="fade-left" className={`main w-full h-auto hidden md:block md:w-[50%] relative `}>
-                        <div className={`mainArea`}>
-                            <img data-aos="zoom-in-up" src={avatar.src} className={`avatar`} />
+                        <div className={`img-cont w-[250px] h-[250px] p-[15vmin] flex flex-col items-center justify-center bg-cover bg-center  rounded-[50%] `}>
+                            <style jsx>{`
+                                .img-cont{
+                                    background-image: url("${avatar}");
+                                }
+                            `}</style>
+                            {/* <img data-aos="zoom-in-up" src={avatar === "" ? userAvatar.src : avatar} className={`avatar rounded-[50%] `} /> */}
                         </div>
                         <div data-aos="fade-up" className={`circleA`}>
                             <img src={languages.languages.length === 0 && languages.languages.length > 2 ? "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" : languages.languages[0]} className={`langImgA`} />

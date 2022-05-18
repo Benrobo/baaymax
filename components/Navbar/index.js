@@ -56,7 +56,7 @@ function NavBar() {
 
 export default NavBar
 
-export function ResponsiveNavbar({ activePage }) {
+export function ResponsiveNavbar({ activePage, pageName = "" }) {
 
     const [active, setActive] = useState(activePage || "home")
 
@@ -99,7 +99,7 @@ export function ResponsiveNavbar({ activePage }) {
                     <label className={`label`}>About</label>
                 </li>
                 <li className={active === "contact" ? `active mr-5` : `li mr-5`} data-name="contact" onClick={handleActive}>
-                    <Link href="#contact">
+                    <Link href={pageName === "" ? "#contact" : "/#contact"}>
                         <ion-icon name="mail-outline" class={`icon`}></ion-icon>
                     </Link>
                     <label className={`label`}>Contact</label>

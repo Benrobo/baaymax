@@ -3,22 +3,12 @@
     "tag_line": "Making The Impossible Possible. Using 1's and 0's.",
     "subTitle": "Problem solving is what makes me unique.",
     "tech_year": "2019",
-    "projects": {
-        "designs": 10,
-        "frontend": 20,
-        "backend": 30,
-        "blockchain": null,
-        "devops": null
-    },
     "github_username": "benrobo",
     "user_skill": "Software Engineer",
     "favorites_quote":"Willingness to take intelligient risks in the pursuit of your clearly defined goals, put you on a greater side of life. Enabling you to archive the same level of success in 1 or 2 years, which may take other people10 or 20 years to archieve, if lessed focused.",
     "intro_tagline": "Mission driven software engineer, with a passion for thoughtful UI design, collaboration, and teaching.",
     "greeting_type": "Hello! 🖐",
     "bio_desc": [
-        "As a software developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally change the world. That's why I’m excited to make a big impact at a high growth company.",
-        "some other boring paragraphs",
-        "some other boring paragraphs",
-        "some other boring paragraphs"
+        "As a software developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally change the world. That's why I’m excited to make a big impact at a high growth company."
     ]
 }

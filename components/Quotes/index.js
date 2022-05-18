@@ -2,6 +2,8 @@ import React from 'react'
 import { Container } from '..'
 
 import { FaStar, FaQuoteLeft, FaQuoteRight } from "react-icons/fa"
+import userInfo from "../../data/usersInfo.json"
+
 
 function Quote() {
     return (
@@ -29,12 +31,12 @@ function QuoteCard() {
             <FaQuoteRight data-aos="fade-left" className='absolute top-[20px] right-[25px] text-[35px] text-white-300 opacity-[.3]' />
             <div id="ratings" className="w-full flex flex-row items-center justify-start">
                 <StarRatings count={10} size={10} />
-                <small className='ml-2 text-white-300 font-bold'>Benaiah</small>
+                <small className='ml-2 text-white-300 font-bold'>{userInfo.github_username.charAt(0).toUpperCase() + userInfo.github_username.slice(1)}</small>
             </div>
             <br />
             <div id="body" className="w-full flex flex-row items-start justify-start mt-4">
                 <p data-aos="zoom-in-up">
-                    Willingness to take intelligient risks in the pursuit of your clearly defined goals, put you on a greater side of life. Enabling you to archive the same level of success in 1 or 2 years, which may take other people10 or 20 years to archieve, if lessed focused.
+                    {userInfo.favorites_quote}
                 </p>
             </div>
         </div>
