@@ -83,11 +83,44 @@ you now have your own personal portfolio site ready to use which can now be depl
 Before running your portfolio, make sure you follow the below `instructions` carefully.
 
 ### Setp 1
-Configure your information found in `...data/usersInfo.json`. This file contain your core information about you and some other stuff. This can be done after making use of the [BAAYMAX_CLI APP](https://github.com/Benrobo/baaymax-cli/)
-
+Configure your information found in `...data/usersInfo.json`. This file contain your core information about you and some other stuff.
+> . This can be done after making use of the [BAAYMAX_CLI APP](https://github.com/Benrobo/baaymax-cli/)
 
 <img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/2.png?raw=true">
 
+### Setp 2
+Configure your favorites `programming languages` or `tools` found in `...data/languages.json`. Go to [Devicons.dev](https://devicon.dev/) select (3) your favorites tools and replace the ones found within this file.
+
+> . This can be done after making use of the [BAAYMAX_CLI APP](https://github.com/Benrobo/baaymax-cli/)
+
+
+<img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/5.png?raw=true">
+
+
+### Setp 3
+Configure your social accounts found in `...data/socials.json`.
+
+<img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/3.png?raw=true">
+
+
+### Setp 4
+Configure your personal `projects` found in `...data/projects.json`.
+
+> . This can be done after making use of the [BAAYMAX_CLI APP](https://github.com/Benrobo/baaymax-cli/)
+
+<img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/4.png?raw=true">
+
+### Setp 5
+Configure your personal `projects` found in `...data/projects.json`.
+
+BaayMax uses EmailJs a javascript library for sending mails right into your inbox. So do the following.
+
+1. Visit https://emailjs.com.
+2. Create an account.
+3. Follow the instructions on setting up yours @ https://www.emailjs.com/docs/sdk/installation/. If you feel lost checkout my old [Youtube Video](https://www.youtube.com/watch?v=XdXo9rravmk&t=1762s) where I explain how to send mails using this library. [ Disclaimer: the video was made when I was still a beginner, so take whatever you see as a beginner. ].
+Replace the below config with yours, if not, users wont be able to send MESSAGE to your inbox.
+
+<img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/1.png?raw=true">
 
 ## Disclaimer 😢
 
