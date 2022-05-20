@@ -110,7 +110,7 @@ function ProjectsCard() {
                                     <div className="w-full h-auto">
                                         <p className={`text-[15px] text-white-200`}>{list.title === "" ? "Project Title" : list.title}</p>
                                         <br />
-                                        <small>{list.description === "" ? "some dummy description" : list.description}</small>
+                                        <small>{list.description === "" ? "some dummy description" : list.description.length > 150 ? list.description.slice(0, 100) + "..." : rep.description}</small>
                                     </div>
                                     <br />
                                     <div className={` bottom-[5px] left-[5px] p-0 flex items-start justify-start`}>

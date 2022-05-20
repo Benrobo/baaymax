@@ -10,6 +10,7 @@
     "setup": "node ./scripts/setup.js"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "aos": "^2.3.4",
     "dotenv": "^16.0.0",
     "gradient-string": "^2.0.1",

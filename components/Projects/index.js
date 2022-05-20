@@ -130,7 +130,7 @@ function GithubRepo({ repos }) {
                         return (
                             <div data-aos="zoom-in" className="relative w-full h-[180px] bg-dark-200 flex flex-col items-start justify-start px-4 py-3 mt-2 rounded-md md:w-[300px] ">
                                 <h2 className="w-full text-[20px] ">{rep.name}</h2>
-                                <p className=" w-full text-[15px] text-white-300 ">{rep.description}</p>
+                                <p className=" w-full text-[15px] text-white-300 ">{rep.description.length > 150 ? rep.description.slice(0, 100) + "..." : rep.description}</p>
                                 <br />
                                 <div className="ratings absolute bottom-4 w-full flex flex-row items-start justify-start">
                                     <span className="mr-2 flex flex-row items-start justify-start">

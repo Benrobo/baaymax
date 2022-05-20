@@ -133,17 +133,6 @@ export default function Header({ children }) {
 
 function ResumeViewer({ openResume }) {
 
-    useEffect(() => {
-        (async () => {
-            let res = await fetch("./CV/resume.pdf")
-            let data = res.url
-
-            console.log(res);
-
-            setResume(data)
-        })()
-    }, [])
-
     function dowloadCv() {
         let link = document.createElement("a")
         link.href = resume;
