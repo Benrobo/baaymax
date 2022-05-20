@@ -111,7 +111,7 @@ Configure your personal `projects` found in `...data/projects.json`.
 <img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/4.png?raw=true">
 
 ### Setp 5
-Configure your personal `projects` found in `...data/projects.json`.
+Configure your personal `projects` found in `...confid/index.js`.
 
 BaayMax uses EmailJs a javascript library for sending mails right into your inbox. So do the following.
 
