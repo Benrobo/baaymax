@@ -130,7 +130,7 @@ function GithubRepo({ repos }) {
                 repos.length > 0 ?
                     repos.slice(0, 3).map((rep, i) => {
                         return (
-                            <div key={i} className="relative w-full h-[180px] bg-dark-200 flex flex-col items-start justify-start px-4 py-3 mt-2 rounded-md md:w-[300px] ">
+                            <div data-aos="zoom-in" key={i} className="relative w-full h-[180px] bg-dark-200 flex flex-col items-start justify-start px-4 py-3 mt-2 rounded-md md:w-[300px] ">
                                 <h2 className="w-full text-[20px] ">{rep.name}</h2>
                                 <br />
                                 <p className=" w-full text-[15px] text-white-300 ">{rep.description.length > 150 ? rep.description.slice(0, 100) + "..." : rep.description}</p>

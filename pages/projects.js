@@ -67,23 +67,6 @@ function Projects() {
 
 export default Projects
 
-function Categories() {
-
-    return (
-        <div className="w-full flex flex-row items-start justify-start flex-wrap md:w-[90%]">
-            {
-                Array(5).fill(1).map((_) => {
-                    return (
-                        <span key={_} className="px-4 py-2 mt-2 rounded-md cursor-pointer text-white-200 transition-all bg-dark-300 mr-4 hover:bg-dark-400">
-                            Design
-                        </span>
-                    )
-                })
-            }
-        </div>
-    )
-}
-
 function ProjectsCard() {
 
     return (
