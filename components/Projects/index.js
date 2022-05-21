@@ -162,7 +162,7 @@ function StarRatings({ count = 1, size = 3, title = "star" }) {
             {
                 title === "star" ?
 
-                    Array(count).fill(count).slice(0, 3).map((i) => {
+                    Array(3).fill(3).slice(0, 3).map((i) => {
                         return (
                             <FaStar key={i} className={`text-green-200 text-[${size}px] `} />
                         )

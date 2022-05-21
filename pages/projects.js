@@ -219,7 +219,7 @@ function StarRatings({ count = 1, size = 3, title = "star" }) {
     return (
         <>
             {
-                Array(count).fill(count).map((i) => {
+                Array(3).fill(3).map((i) => {
                     return (
                         <>
                             {title === "star" ?
