@@ -122,6 +122,18 @@ Replace the below config with yours, if not, users wont be able to send MESSAGE 
 
 <img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/1.png?raw=true">
 
+### Step 6
+
+Dont forget to setup your `Emailjs Template` as shown in the picture, if you feel like adding a different style, also update the `template` object found in `/components/contact/index.js <line 86:90>`
+
+```javascript
+    86 const templateParams = {
+    87    from_name: name,
+    88    sender_email: email,
+    89    message: message
+    90 };
+```
+
 ## Disclaimer 😢
 
 > if you run into an `error` kindly post it within the github issue tab here [Raise Error](https://github.com/Benrobo/baaymax-cli/issues)
