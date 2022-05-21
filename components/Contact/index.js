@@ -111,7 +111,8 @@ function ContactForm({ contactActive, closeContactForm }) {
                 return console.log(response);
             }, (err) => {
                 setLoading(false)
-                notif.error(`FAILED: ${err.message}`)
+                notif.error(`Something went wrong, could not send message.`)
+                console.error(err)
             });
 
     }

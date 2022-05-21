@@ -11,19 +11,29 @@ function Projects() {
 
     const [repo, setRepo] = useState([])
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
     async function fetchRepos() {
         let res;
         let url = `https://api.github.com/users/${userInfo.github_username}/repos`
         if (localStorage.getItem("user_repos") === null) {
-            setLoading(true)
-            res = await fetch(url)
-            let data = await res.json()
-            setLoading(false)
-            if (data && data.length > 0) {
-                localStorage.setItem("user_repo", JSON.stringify(data))
-                setRepo(data)
-                return
+            try {
+                setLoading(true)
+                res = await fetch(url)
+                let data = await res.json()
+                setLoading(false)
+                if (data && data.length > 0) {
+                    localStorage.setItem("user_repo", JSON.stringify(data))
+                    setRepo(data)
+                    return
+                }
+                setLoading(false)
+                setError(`No github repos found.`)
+            }
+            catch (err) {
+                console.error(`FAILED: ${err.message}`)
+                setLoading(false)
+                setError(`Failed fetching repo: ${err.message}`)
             }
         }
 
@@ -114,7 +124,7 @@ function Projects() {
                 }
             </div>
             <div className="w-full h-auto mt-4 mb-5 p-3 flex flex-row flex-wrap items-center justify-between ">
-                {loading ? "Loading..." : <GithubRepo repos={repo} />}
+                {loading ? "Loading..." : error !== null ? <p>{error}</p> : <GithubRepo repos={repo} />}
             </div>
         </div>
     )

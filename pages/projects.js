@@ -137,20 +137,28 @@ function ProjectsCard() {
 function GithubRepo() {
     const [repos, setRepo] = useState([])
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
     async function fetchRepos() {
         let res;
         let url = `https://api.github.com/users/${userInfo.github_username}/repos`
         if (localStorage.getItem("user_repos") === null) {
-            setLoading(true)
-            res = await fetch(url)
-            let data = await res.json()
-            setLoading(false)
+            try {
+                setLoading(true)
+                res = await fetch(url)
+                let data = await res.json()
+                setLoading(false)
 
-            if (data && data.length > 0) {
-                localStorage.setItem("user_repo", JSON.stringify(data))
-                setRepo(data)
-                return
+                if (data && data.length > 0) {
+                    localStorage.setItem("user_repo", JSON.stringify(data))
+                    setRepo(data)
+                    return
+                }
+                setError("No github repo found")
+                setLoading(false)
+            } catch (err) {
+                setError(`FAILED FETCHING REPO'S: ${err.message}`)
+                setLoading(false)
             }
         }
 
@@ -170,7 +178,7 @@ function GithubRepo() {
     return (
         <>
             {
-                loading ? "Loading..." : repos.length > 0 ?
+                loading ? "Loading..." : error !== null ? <p>{error}</p> : repos.length > 0 ?
                     repos.map((rep, i) => {
                         return (
                             <div key={i} className="relative w-full h-[180px] bg-dark-200 flex flex-col items-start justify-start px-4 py-3 mt-2 rounded-md md:w-[300px]">

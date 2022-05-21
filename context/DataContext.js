@@ -30,27 +30,35 @@ export function DataContextProvider({ children }) {
     }
 
     async function fetchReposCount() {
-        let res = await fetch(`https://api.github.com/users/${usersInfo.github_username}`)
-        let data = await res.json()
+        try {
+            let res = await fetch(`https://api.github.com/users/${usersInfo.github_username}`)
+            let data = await res.json()
 
-        if (data && data.public_repos !== undefined) {
-            const { public_repos, avatar_url } = data;
-            localStorage.setItem("repo_counts", JSON.stringify(public_repos))
-            // store github user avatar
-            localStorage.setItem("github_avatar", JSON.stringify(avatar_url))
+            if (data && data.public_repos !== undefined) {
+                const { public_repos, avatar_url } = data;
+                localStorage.setItem("repo_counts", JSON.stringify(public_repos))
+                // store github user avatar
+                localStorage.setItem("github_avatar", JSON.stringify(avatar_url))
 
-            console.log("USER REPOS COUNTS AND AVATAR_URL UPDATED IN BACKGROUND");
+                console.log("USER REPOS COUNTS AND AVATAR_URL UPDATED IN BACKGROUND");
+            }
+        } catch (err) {
+            console.error(`FAILED FECTHING: ${err.message}`)
         }
     }
 
     async function fetchRepos() {
-        let res = await fetch(`https://api.github.com/users/${usersInfo.github_username}/repos`)
-        let data = await res.json()
+        try {
+            let res = await fetch(`https://api.github.com/users/${usersInfo.github_username}/repos`)
+            let data = await res.json()
 
-        if (data) {
-            localStorage.setItem("user_repo", JSON.stringify(data))
+            if (data) {
+                localStorage.setItem("user_repo", JSON.stringify(data))
 
-            console.log("USER PUBLIC REPOS UPDATED IN BACKGROUND")
+                console.log("USER PUBLIC REPOS UPDATED IN BACKGROUND")
+            }
+        } catch (err) {
+            console.error(`FAILED FETCHING: ${err.message}`);
         }
     }
 
