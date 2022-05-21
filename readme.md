@@ -4,10 +4,11 @@ Generating of portfolio site just got easier. BaayMax a tool for developers whic
 
 With just a command, your portfolio is ready.
 
-<img src="https://github.com/Benrobo/baaymax-cli/blob/master/readmeImg/app.png?raw=true">
+
+<img src="https://github.com/Benrobo/baaymax-assets/blob/main/app.png?raw=true">
 
 
-<img src="https://github.com/Benrobo/baaymax-cli/blob/master/readmeImg/cli.png?raw=true">
+<img src="https://github.com/Benrobo/baaymax-assets/blob/main/cli.png?raw=true">
 
 ## Getting Started 😎
 
@@ -52,7 +53,7 @@ If the above requirement are `checked`, it time to generate your personal portfo
 
 A screen below should be printed out within your terminal
 
-<img src="https://github.com/Benrobo/baaymax-cli/blob/master/readmeImg/cli.png?raw=true">
+<img src="https://github.com/Benrobo/baaymax-assets/blob/main/cli.png?raw=true">
 
 ### Generate your own portfolio. 💖❤
 using `baaymax --init <project_name>` would run you through the setup, kindly follow all instructions carefully.
@@ -75,7 +76,7 @@ Open `localhost:3000/` within your browser.
 
 you now have your own personal portfolio site ready to use which can now be deployed.
 
-<img src="https://github.com/Benrobo/baaymax-cli/blob/master/readmeImg/app.png?raw=true">
+<img src="https://github.com/Benrobo/baaymax-assets/blob/main/app.png?raw=true">
 
 
 ## Configure your portfolio.
@@ -86,7 +87,7 @@ Before running your portfolio, make sure you follow the below `instructions` car
 Configure your information found in `...data/usersInfo.json`. This file contain your core information about you and some other stuff.
 > . This can be done after making use of the [BAAYMAX_CLI APP](https://github.com/Benrobo/baaymax-cli/)
 
-<img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/2.png?raw=true">
+<img src="https://github.com/Benrobo/baaymax-assets/blob/main/2.png?raw=true">
 
 ### Setp 2
 Configure your favorites `programming languages` or `tools` found in `...data/languages.json`. Go to [Devicons.dev](https://devicon.dev/) select (3) your favorites tools and replace the ones found within this file.
@@ -94,13 +95,13 @@ Configure your favorites `programming languages` or `tools` found in `...data/la
 > . This can be done after making use of the [BAAYMAX_CLI APP](https://github.com/Benrobo/baaymax-cli/)
 
 
-<img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/5.png?raw=true">
+<img src="https://github.com/Benrobo/baaymax-assets/blob/main/5.png?raw=true">
 
 
 ### Setp 3
 Configure your social accounts found in `...data/socials.json`.
 
-<img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/3.png?raw=true">
+<img src="https://github.com/Benrobo/baaymax-assets/blob/main/3.png?raw=true">
 
 
 ### Setp 4
@@ -108,7 +109,7 @@ Configure your personal `projects` found in `...data/projects.json`.
 
 > . This can be done after making use of the [BAAYMAX_CLI APP](https://github.com/Benrobo/baaymax-cli/)
 
-<img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/4.png?raw=true">
+<img src="https://github.com/Benrobo/baaymax-assets/blob/main/4.png?raw=true">
 
 ### Setp 5
 Configure your personal `projects` found in `...confid/index.js`.
@@ -120,13 +121,13 @@ BaayMax uses EmailJs a javascript library for sending mails right into your inbo
 3. Follow the instructions on setting up yours @ https://www.emailjs.com/docs/sdk/installation/. If you feel lost checkout my old [Youtube Video](https://www.youtube.com/watch?v=XdXo9rravmk&t=1762s) where I explain how to send mails using this library. [ Disclaimer: the video was made when I was still a beginner, so take whatever you see as a beginner. ].
 Replace the below config with yours, if not, users wont be able to send MESSAGE to your inbox.
 
-<img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/1.png?raw=true">
+<img src="https://github.com/Benrobo/baaymax-assets/blob/main/1.png?raw=true">
 
 ### Step 6
 
 Dont forget to setup your `Emailjs Template` as shown in the picture, if you feel like adding a different style, also update the `template` object found in `/components/contact/index.js <line 86:90>`
 
-<img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/emailjs.PNG?raw=true">
+<img src="https://github.com/Benrobo/baaymax-assets/blob/main/emailjs.PNG?raw=true">
 
 ```javascript
     86 const templateParams = {
@@ -140,12 +141,12 @@ Dont forget to setup your `Emailjs Template` as shown in the picture, if you fee
 
 Upload your `CV / RESUME` file within the `public/CV` folder with the name `resume.pdf` just as seen in the picture below.
 
-<img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/cv.PNG?raw=true">
+<img src="https://github.com/Benrobo/baaymax-assets/blob/main/cv.PNG?raw=true">
 
 # Customizing your site theme.
 This can be done by simply updating some of the `color codes` found in `tailwind.config.js`
 
-<img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/color.png?raw=true">
+<img src="https://github.com/Benrobo/baaymax-assets/blob/main/color.png?raw=true">
 
 > ALSO, IF YOU FEEL NOTHING CHANGE AFTER MAKING NECESSARY UPDATES, SIMPLY CLEAR `CACHE STORAGE` ALONG WITH `LOCALSTORAGE`.
 
