@@ -24,7 +24,7 @@ export default function Intro() {
                         </h1>
                         <br />
                         <br />
-                        <p data-aos="zoom-in-right" className={`text-[15px] text-white-100`}>
+                        <p data-aos="zoom-in-right" className={`text-[15px] text-white-200 italic px-3 py-2 bg-dark-300 border-l-[3px] border-solid border-l-green-200 `}>
                             {usersInfo.intro_tagline}
                         </p>
                         <br />

@@ -67,12 +67,12 @@ export default function Header({ children }) {
 
                     <div className={`w-full h-full mb-[50px] relative md:w-[50%]`}>
                         <div className={``}>
-                            <span data-aos="fade-up" className={`py-[2px] px-[8px] bg-green-600 text-green-100 rounded-[3px] text-[12px] `}>
-                                Software Engineer
+                            <span data-aos="fade-up" className={`py-[2px] px-[8px] bg-green-600 text-green-100 rounded-[3px] text-[12px] text-capitalize  `}>
+                                {usersInfo.user_skill}
                             </span>
                             <br />
                             <br />
-                            <h1 data-aos="fade-right" className={` text-[9vmin] md:text-[5vmin] `}>
+                            <h1 data-aos="fade-right" className={` text-[9vmin] md:text-[5vmin]`}>
                                 {usersInfo.tag_line}
                             </h1>
                             <br />
