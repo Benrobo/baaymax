@@ -126,6 +126,8 @@ Replace the below config with yours, if not, users wont be able to send MESSAGE 
 
 Dont forget to setup your `Emailjs Template` as shown in the picture, if you feel like adding a different style, also update the `template` object found in `/components/contact/index.js <line 86:90>`
 
+<img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/emailjs.PNG?raw=true">
+
 ```javascript
     86 const templateParams = {
     87    from_name: name,
