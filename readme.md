@@ -5,7 +5,7 @@ Generating of portfolio site just got easier. BaayMax a tool for developers whic
 With just a command, your portfolio is ready.
 
 
-<img src=https://github.com/Benrobo/baaymax-assets/blob/main/baaymax%20(2).gif?raw=true">
+<img src="https://github.com/Benrobo/baaymax-assets/blob/main/baaymax%20(2).gif?raw=true">
 
 
 <img src="https://github.com/Benrobo/baaymax-assets/blob/main/cli.png?raw=true">
