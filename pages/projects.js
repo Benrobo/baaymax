@@ -45,16 +45,16 @@ function Projects() {
                 <br />
                 <Container>
                     <div id="head" className="w-full py-2 mx-auto flex flex-row justify-start items-start ">
-                        <h2 className="text-[20px] text-white-200 ">Personal Projects</h2>
+                        <h2 className="text-[20px] text-white-200 px-4 md:px-4 ">Personal Projects</h2>
                     </div>
-                    <div className="w-full mt-2 mx-auto h-auto  flex flex-col items-start justify-start flex-wrap mb-5 space-x-0 md:space-x-5 md:w-[100%] md:flex-row">
+                    <div className="w-full mt-2 mx-auto h-auto p-3  flex flex-col items-start justify-start flex-wrap mb-5 space-x-0 md:space-x-5 md:w-[100%] md:flex-row">
                         {/* <Categories /> */}
                         <ProjectsCard />
                     </div>
                     <div id="head" className="w-full py-5 mx-auto flex flex-row justify-start items-start ">
-                        <h2 className=" text-[20px] text-white-200 ">Github Repos</h2>
+                        <h2 className=" text-[20px] text-white-200 p-4 md:p-0 ">Github Repos</h2>
                     </div>
-                    <div id="head" className="w-full space-x-0 py-4 mx-auto flex flex-row justify-start items-start flex-wrap mb-[50px] md:flex-row md:space-x-3 ">
+                    <div id="head" className="w-full space-x-0 py-4 p-4 mx-auto flex flex-row justify-start items-start flex-wrap mb-[50px] gap-10 md:flex-row md:space-x-0 ">
                         <GithubRepo />
                     </div>
                 </Container>
@@ -92,7 +92,7 @@ function ProjectsCard() {
                 projects.length > 0 ?
                     projects.slice(0, 3).map((list, i) => {
                         return (
-                            <div data-aos="zoom-in" key={i} className={`box w-full h-auto bg-dark-200 rounded-[5px] relative top-[50px] transition-all mb-[50px] mr-[5px] opacity-[.7] md:w-[250px] hover:opacity-[1]`} key={list}>
+                            <div key={i} className={`box w-full h-auto bg-dark-200 rounded-[5px] relative top-[50px] transition-all mb-[50px] mr-[5px] opacity-[.7] md:w-[250px] md:ml-0 hover:opacity-[1]`}>
                                 <div className="imgCont"></div>
                                 <style jsx>{`
                         .imgCont{
@@ -110,7 +110,7 @@ function ProjectsCard() {
                                     <div className="w-full h-auto">
                                         <p className={`text-[15px] text-white-200`}>{list.title === "" ? "Project Title" : list.title}</p>
                                         <br />
-                                        <small>{list.description === "" ? "some dummy description" : list.description.length > 150 ? list.description.slice(0, 100) + "..." : rep.description}</small>
+                                        <small>{list.description === "" ? "some dummy description" : list.description.length > 150 ? list.description.slice(0, 100) + "..." : list.description}</small>
                                     </div>
                                     <br />
                                     <div className={` bottom-[5px] left-[5px] p-0 flex items-start justify-start`}>
@@ -153,13 +153,16 @@ function ProjectsCard() {
 
 function GithubRepo() {
     const [repos, setRepo] = useState([])
+    const [loading, setLoading] = useState(false)
 
     async function fetchRepos() {
         let res;
         let url = `https://api.github.com/users/${userInfo.github_username}/repos`
         if (localStorage.getItem("user_repos") === null) {
+            setLoading(true)
             res = await fetch(url)
             let data = await res.json()
+            setLoading(false)
 
             if (data && data.length > 0) {
                 localStorage.setItem("user_repo", JSON.stringify(data))
@@ -184,12 +187,12 @@ function GithubRepo() {
     return (
         <>
             {
-                repos.length > 0 ?
+                loading ? "Loading..." : repos.length > 0 ?
                     repos.map((rep, i) => {
                         return (
-                            <div data-aos="zoom-in" className="relative w-full h-[180px] bg-dark-200 flex flex-col items-start justify-start px-4 py-3 mt-2 rounded-md md:w-[300px]">
+                            <div key={i} className="relative w-full h-[180px] bg-dark-200 flex flex-col items-start justify-start px-4 py-3 mt-2 rounded-md md:w-[300px]">
                                 <h2 className="w-full text-[20px] ">{rep.name}</h2>
-                                <p className=" w-full text-[15px] text-white-300 ">{rep.description}</p>
+                                <p className=" w-full text-[15px] text-white-300 ">{rep.description && rep.description.length > 150 ? rep.description.slice(0, 100) + "......" : rep.description}</p>
                                 <br />
                                 <div className="ratings absolute bottom-4 w-full flex flex-row items-start justify-start">
                                     <span className="mr-2 flex flex-row items-start justify-start">
@@ -223,10 +226,10 @@ function StarRatings({ count = 1, size = 3, title = "star" }) {
                     return (
                         <>
                             {title === "star" ?
-                                <FaStar key={i} className={`text-green-200 text-[${size}px] `} key={i} />
+                                <FaStar key={i * Math.random()} className={`text-green-200 text-[${size}px] `} />
                                 :
                                 title === "fork" ?
-                                    <AiFillGithub key={i} className={`text-green-200 text-[${size}px] `} key={i} />
+                                    <AiFillGithub key={i * Math.random()} className={`text-green-200 text-[${size}px] `} />
                                     :
                                     ""
                             }

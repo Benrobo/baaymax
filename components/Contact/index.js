@@ -118,7 +118,7 @@ function ContactForm({ contactActive, closeContactForm }) {
 
     return (
         <div className="w-screen ">
-            <div className={`w-[400px] ${contactActive ? "h-[100vh]" : "h-0 overflow-hidden"} max-h-[450px] bg-dark-300 shadow-xl z-[999] fixed bottom-[90px] right-4 px-3 rounded-md transition-all md:right-5 md:bottom-[20px] md:w-[350px]`} id="form">
+            <div className={`w-[380px] ${contactActive ? "h-[100vh]" : "h-0 overflow-hidden"} max-h-[450px] bg-dark-300 shadow-xl z-[999] fixed bottom-[90px] right-1 px-3 rounded-md transition-all md:right-5 md:bottom-[20px] md:w-[350px]`} id="form">
                 <div id="head" className='w-full flex flex-row items-start justify-start'>
                     <h1 className="text-[20px] py-4 ">
                         Contact Me

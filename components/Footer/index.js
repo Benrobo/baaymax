@@ -13,7 +13,7 @@ function Footer() {
         <div className="relative flex flex-row items-center justify-between">
           <div className="left flex flex-row">
             <h1 className=" text-[15px] ">
-              <span className="font-extrabold">{usersInfo.full_name} {process.env.NAME}</span>
+              <span className="font-extrabold">{usersInfo.github_username}</span>
             </h1>
             <small className="ml-[20px] text-white-200 ">
               &copy; {new Date().getFullYear()} All Right Reserved.

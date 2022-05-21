@@ -10,14 +10,16 @@ import userInfo from "../../data/usersInfo.json"
 function Projects() {
 
     const [repo, setRepo] = useState([])
+    const [loading, setLoading] = useState(false)
 
     async function fetchRepos() {
         let res;
         let url = `https://api.github.com/users/${userInfo.github_username}/repos`
         if (localStorage.getItem("user_repos") === null) {
+            setLoading(true)
             res = await fetch(url)
             let data = await res.json()
-
+            setLoading(false)
             if (data && data.length > 0) {
                 localStorage.setItem("user_repo", JSON.stringify(data))
                 setRepo(data)
@@ -112,7 +114,7 @@ function Projects() {
                 }
             </div>
             <div className="w-full h-auto mt-4 mb-5 p-3 flex flex-row flex-wrap items-center justify-between ">
-                <GithubRepo repos={repo} />
+                {loading ? "Loading..." : <GithubRepo repos={repo} />}
             </div>
         </div>
     )
@@ -128,8 +130,9 @@ function GithubRepo({ repos }) {
                 repos.length > 0 ?
                     repos.slice(0, 3).map((rep, i) => {
                         return (
-                            <div data-aos="zoom-in" className="relative w-full h-[180px] bg-dark-200 flex flex-col items-start justify-start px-4 py-3 mt-2 rounded-md md:w-[300px] ">
+                            <div key={i} className="relative w-full h-[180px] bg-dark-200 flex flex-col items-start justify-start px-4 py-3 mt-2 rounded-md md:w-[300px] ">
                                 <h2 className="w-full text-[20px] ">{rep.name}</h2>
+                                <br />
                                 <p className=" w-full text-[15px] text-white-300 ">{rep.description.length > 150 ? rep.description.slice(0, 100) + "..." : rep.description}</p>
                                 <br />
                                 <div className="ratings absolute bottom-4 w-full flex flex-row items-start justify-start">
@@ -164,7 +167,7 @@ function StarRatings({ count = 1, size = 3, title = "star" }) {
 
                     Array(3).fill(3).slice(0, 3).map((i) => {
                         return (
-                            <FaStar key={i} className={`text-green-200 text-[${size}px] `} />
+                            <FaStar key={i * Math.floor(Math.random() * 1000)} className={`text-green-200 text-[${size}px] `} />
                         )
                     })
                     :
