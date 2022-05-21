@@ -136,13 +136,18 @@ Dont forget to setup your `Emailjs Template` as shown in the picture, if you fee
     90 };
 ```
 
+### Step 7
+
+Upload your `CV / RESUME` file within the `public/CV` folder with the name `resume.pdf` just as seen in the picture below.
+
+<img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/cv.PNG?raw=true">
 
 # Customizing your site theme.
 This can be done by simply updating some of the `color codes` found in `tailwind.config.js`
 
 <img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/color.png?raw=true">
 
-> ALSO, IF YOU FEEL NOTHING CHANGE AFTER MAKING NECESSARY UPDATES, SIMPLY CLEAR `CACHE STORAGE` ALIONG WITH `LOCALSTORAGE`.
+> ALSO, IF YOU FEEL NOTHING CHANGE AFTER MAKING NECESSARY UPDATES, SIMPLY CLEAR `CACHE STORAGE` ALONG WITH `LOCALSTORAGE`.
 
 
 ## Disclaimer 😢
