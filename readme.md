@@ -136,6 +136,15 @@ Dont forget to setup your `Emailjs Template` as shown in the picture, if you fee
     90 };
 ```
 
+
+# Customizing your site theme.
+This can be done by simply updating some of the `color codes` found in `tailwind.config.js`
+
+<img src="https://github.com/Benrobo/baaymax/blob/master/ReadMeImages/color.png?raw=true">
+
+> ALSO, IF YOU FEEL NOTHING CHANGE AFTER MAKING NECESSARY UPDATES, SIMPLY CLEAR `CACHE STORAGE` ALIONG WITH `LOCALSTORAGE`.
+
+
 ## Disclaimer 😢
 
 > if you run into an `error` kindly post it within the github issue tab here [Raise Error](https://github.com/Benrobo/baaymax-cli/issues)
