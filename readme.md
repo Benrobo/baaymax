@@ -4,6 +4,9 @@ Generating of portfolio site just got easier. BaayMax a tool for developers whic
 
 With just a command, your portfolio is ready.
 
+Checkout Live Version: [baaymax portfolio](https://benrobo.vercel.app/)
+
+Watch brief video about #Baaymax [BaayMax Vide](https://youtu.be/X_cHNdnG4Bo)
 
 <img src="https://github.com/Benrobo/baaymax-assets/blob/main/baaymax (2).gif?raw=true">
 
