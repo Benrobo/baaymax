@@ -73,7 +73,7 @@ function ProjectsCard() {
         <>
             {
                 projects.length > 0 ?
-                    projects.slice(0, 3).map((list, i) => {
+                    projects.map((list, i) => {
                         return (
                             <div key={i} className={`box w-full h-auto bg-dark-200 rounded-[5px] relative top-[50px] transition-all mb-[50px] mr-[5px] opacity-[.7] md:w-[250px] md:ml-0 hover:opacity-[1]`}>
                                 <div className="imgCont"></div>
@@ -183,7 +183,7 @@ function GithubRepo() {
                         return (
                             <div key={i} className="relative w-full h-[180px] bg-dark-200 flex flex-col items-start justify-start px-4 py-3 mt-2 rounded-md md:w-[300px]">
                                 <h2 className="w-full text-[20px] ">{rep.name}</h2>
-                                <p className=" w-full text-[15px] text-white-300 ">{rep.description && rep.description.length > 150 ? rep.description.slice(0, 100) + "......" : rep.description}</p>
+                                <p className=" w-full text-[15px] text-white-300 ">{rep.description && rep.description.length > 50 ? rep.description.slice(0, 80) + "..." : rep.description}</p>
                                 <br />
                                 <div className="ratings absolute bottom-4 w-full flex flex-row items-start justify-start">
                                     <span className="mr-2 flex flex-row items-start justify-start">
@@ -213,7 +213,7 @@ function StarRatings({ count = 1, size = 3, title = "star" }) {
     return (
         <>
             {
-                Array(3).fill(3).map((i) => {
+                Array(1).fill(1).map((i) => {
                     return (
                         <>
                             {title === "star" ?
