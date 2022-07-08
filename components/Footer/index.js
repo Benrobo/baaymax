@@ -44,7 +44,7 @@ export default Footer
 function SocialLink({ url, children }) {
 
   return (
-    <a href={url} target="_blank" className=" no-underline text-white-100 decoration-none hover:text-white-100 mr-4 ">
+    <a href={url.includes("@") ? `mailto:${url}`: url} target="_blank" className=" no-underline text-white-100 decoration-none hover:text-white-100 mr-4 ">
       {children}
     </a>
   )
