@@ -21,14 +21,14 @@ Watch brief video about #Baaymax [BaayMax Video](https://youtu.be/X_cHNdnG4Bo)
 
 > check if `nodejs` and `git` are installed using the below commands.
 
-#### Git
+#### NodeJS
 
 ```bash 
     node --version
     # v16.4.2
 ```
 
-#### Nodejs
+#### Git
 
 ```bash
     git --version
@@ -50,7 +50,7 @@ If the above requirement are `checked`, it time to generate your personal portfo
 
 ### Check if it installed globally on your pc by running : ✌
 
-```
+```bash
     baaymax
 ```
 
@@ -86,38 +86,38 @@ you now have your own personal portfolio site ready to use which can now be depl
 
 Before running your portfolio, make sure you follow the below `instructions` carefully.
 
-### Setp 1
+### Step 1
 Configure your information found in `...data/usersInfo.json`. This file contain your core information about you and some other stuff.
-> . This can be done after making use of the [BAAYMAX_CLI APP](https://github.com/Benrobo/baaymax-cli/)
+> This can be done after making use of the [BAAYMAX_CLI APP](https://github.com/Benrobo/baaymax-cli/)
 
 <img src="https://github.com/Benrobo/baaymax-assets/blob/main/2.png?raw=true">
 
-### Setp 2
+### Step 2
 Configure your favorites `programming languages` or `tools` found in `...data/languages.json`. Go to [Devicons.dev](https://devicon.dev/) select (3) your favorites tools and replace the ones found within this file.
 
-> . This can be done after making use of the [BAAYMAX_CLI APP](https://github.com/Benrobo/baaymax-cli/)
+> This can be done after making use of the [BAAYMAX_CLI APP](https://github.com/Benrobo/baaymax-cli/)
 
 
 <img src="https://github.com/Benrobo/baaymax-assets/blob/main/5.png?raw=true">
 
 
-### Setp 3
+### Step 3
 Configure your social accounts found in `...data/socials.json`.
 
 <img src="https://github.com/Benrobo/baaymax-assets/blob/main/3.png?raw=true">
 
 
-### Setp 4
+### Step 4
 Configure your personal `projects` found in `...data/projects.json`.
 
-> . This can be done after making use of the [BAAYMAX_CLI APP](https://github.com/Benrobo/baaymax-cli/)
+> This can be done after making use of the [BAAYMAX_CLI APP](https://github.com/Benrobo/baaymax-cli/)
 
 <img src="https://github.com/Benrobo/baaymax-assets/blob/main/4.png?raw=true">
 
-### Setp 5
-Configure your personal `projects` found in `...confid/index.js`.
+### Step 5
+Configure your `EmailJS` found in `config/index.js`.
 
-BaayMax uses EmailJs a javascript library for sending mails right into your inbox. So do the following.
+BaayMax uses EmailJS, a JavaScript library for sending mails right into your inbox. So do the following:
 
 1. Visit https://emailjs.com.
 2. Create an account.
@@ -154,6 +154,8 @@ This can be done by simply updating some of the `color codes` found in `tailwind
 > ALSO, IF YOU FEEL NOTHING CHANGE AFTER MAKING NECESSARY UPDATES, SIMPLY CLEAR `CACHE STORAGE` ALONG WITH `LOCALSTORAGE`.
 
 
-## Disclaimer 😢
+## Disclaimer⚠️
 
-> if you run into an `error` kindly post it within the github issue tab here [Raise Error](https://github.com/Benrobo/baaymax-cli/issues)
+If you run into an `error/issue` kindly post it within the github issue tab here [Raise Error](https://github.com/Benrobo/baaymax-cli/issues)
+
+Happy Hacking 🚀✨
